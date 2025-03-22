@@ -8,6 +8,7 @@
 
 body {
   font-family: "Inter", sans-serif;
+  background-color: #F1F3F6;
 }
 
 /* ========== Navbar Styling ========== */
@@ -69,7 +70,7 @@ ul.moreclass-menu::before {
   z-index: 1;
 }
 
-/* loginClass hover and click effect */
+
 .loginClass:hover .loginclass-menu,
 .moreClass:hover .moreclass-menu,
 .loginClass:focus-within .loginclass-menu,
@@ -94,13 +95,13 @@ ul.moreclass-menu::before {
   z-index: 1000;
 }
 .moreclass-menu {
-  display: none; /* Initially hidden */
+  display: none; 
   transition: opacity 0.2s ease-in-out;
   position: absolute;
   right: 40px;
   left: auto;
-  min-width: 180px; /* Prevents loginClasss from being too narrow */
-  max-width: 90vw; /* Ensures it doesn’t overflow */
+  min-width: 180px;
+  max-width: 90vw; 
   background-color: white;
   border-radius: 5px;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
@@ -116,7 +117,7 @@ ul.moreclass-menu li a {
   color: #888888;
   padding: 10px 15px;
   text-decoration: none;
-  white-space: nowrap; /* Prevents text from wrapping */
+  white-space: nowrap; 
 }
 
 ul.loginclass-menu li a:hover,
@@ -322,6 +323,291 @@ div#sidebar {
 
 /* categories section start */
 .allcategories {
-  background-color: #0a3b77;
+  background-color: #0b4184;
+  /* padding: 9px 0px; */
+}
+.MenuBox ul li {
+  list-style: none;
+}
+
+.MenuBox ul li a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  color: #b9d6f9;
+}
+.itemss h3{
+  color: rgb(0, 89, 179);
+  font-size: 16px;
+  background: #f0f8ff;
+  padding: 9px 15px;
+  margin: 0;
+}
+.itemss {
+  display: flex;
+  justify-content: space-between;
+}
+
+.leftOptions {
+  width: 50%;
+}
+
+.rightOptions {
+  width: 50%;
+}
+
+.category-menu {
+  padding: 0px 0px;
+  width: 400px;
+  margin-top: -1px;
+}
+
+.option_s {
+  padding: 9px 15px;
+}
+
+.lop h4 {
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.cate_gories h4:hover {
+  background: #ebebff;
+}
+.cate_gories h4 {
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.lop h4:hover {
+  background: #ebebff;
+}
+
+.option_s:hover {
+  background: #ebebff;
+  cursor: pointer;
+}
+
+.option_s {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.option_s img {
+  width: 30px;
+}
+.option_s p {
+  margin: 0;
+  font-size: 15px;
+}
+.category-menu::before {
+  content: "";
+  display: block;
+  border: 10px solid transparent;
+  border-bottom: 10px solid #f0f8ff;
+  width: 0;
+  position: absolute;
+  top: -20px;
+  right: 81%;
+  transform: translateX(50%);
+  z-index: 1;
+}
+.dropdown.categoryMenu button {
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  font-size: 14px;
+  font-weight: 500;
+  color: #b9d6f9;
+  padding: 10px 0px;
+}
+.MenuBox ul {
+  display: flex;
+  gap: 29px;
+  margin-bottom: 0;
+  align-items: center;
+}
+.MenuBox ul li a:hover {
+  color: white;
+}
+.dropdown.categoryMenu button:hover {
+  color: white;
+}
+.mobile_category_section{
+  display: none;
+}
+.mobile_category_section{
+  background-color: #0a3a75;
+}
+.icon i {
+  color: white;
+  font-size: 18px;
+}
+
+.iconBox {
+  display: flex;
+  justify-content: center;
+  gap: 88px;
+  padding: 10px;
+}
+.iconTxt{
+  margin: 0;
+  padding: 0;
+}
+.iconTxt {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all 0.3s ease-in-out;
+}
+
+.iconTxt img {
+  width: 32px;
+  height: 32px;
+  border-radius: 100%;
+  transition: transform 0.3s ease-in-out;
+}
+
+.iconTxt p {
+  font-size: 16px;
+  margin: 0;
+  color: rgb(51, 51, 51);
+  cursor: pointer;
+  transition: font-weight 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.iconTxt:hover img {
+  transform: scale(1.04); /* Zoom in effect */
+}
+
+.iconTxt:hover p {
+  font-weight: bold;
+}
+
+/* Preventing icondiv from changing size */
+.icondiv {
+  background: linear-gradient(to left, #f3e7e9 0%, #e3eeff 99%, #e3eeff 100%);
+  box-shadow: 1px 1px 2px -1px #ccc;
+  border-radius: 4px;
+  padding: 6px 11px;
+  margin: 17px 26px;
+  transition: none; /* Prevents size increase */
+  border: 1px solid #0000000f;
+}
+
+/* Ensure icondiv does not change size on hover */
+.iconTxt:hover ~ .icondiv {
+  transform: none;
+}
+.iconTextBox {
+  display: flex;
+  gap: 105px;
 }
 /* categories section end */
+
+/* slider and storeis section start */
+.slider_stories{
+  margin: 2px 40px;
+}
+/* Make the carousel indicators circular */
+.carousel-indicators button {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 165, 0, 0.6); /* Light orange */
+  border: none;
+  margin: 0 5px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.carousel-indicators .active {
+  background-color: #ffffff !important; /* Fully orange for active dot */
+}
+
+/* Style for carousel navigation buttons */
+.carousel-control-prev,
+.carousel-control-next {
+  width: 40px; /* Reduce width to keep it closer to the sides */
+  background-color: orange; /* Orange background */
+  opacity: 1; /* Make it fully visible */
+  border-radius: 0;
+}
+
+/* Attach navigation buttons to the left & right edges */
+.carousel-control-prev {
+  left: 0;
+}
+
+
+
+/* Make the navigation icons white for better visibility */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  filter: invert(1); /* Makes the icon white */
+}
+
+
+
+.carousel-indicators [data-bs-target] {
+  box-sizing: content-box;
+  flex: 0 1 auto;
+  width: 7px;
+  height: 7px;
+  padding: 0;
+  margin-right: 3px;
+  margin-left: 3px;
+  text-indent: -999px;
+  cursor: pointer;
+  background-color: #1f1919;
+  background-clip: padding-box;
+  border: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  opacity: .5;
+  transition: opacity .6s ease;
+}
+
+.carousel-control-next {
+  width: 35px; /* Reduce width to keep it closer to the sides */
+  height: 69px;
+  background-color: orange; /* Orange background */
+  opacity: 1; /* Make it fully visible */
+  border-radius: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the button vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 5px #0000001c;
+  border-radius: 4px 0 0 4px;
+  background: rgba(255,255,255,.7);
+}
+.carousel-control-prev {
+  width: 35px; /* Reduce width to keep it closer to the sides */
+  height: 69px;
+  background-color: orange; /* Orange background */
+  opacity: 1; /* Make it fully visible */
+  border-radius: 0;
+  top: 50%;
+  transform: translateY(-50%); /* Centers the button vertically */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 5px #0000001c;
+  border-radius: 0px 4px 4px 0px;
+  background: rgba(255,255,255,.7);
+}
+.sliderDiv{
+  padding: 0;
+  border-radius: 5px;
+}
+.carousel-inner {
+  border-radius: 5px;
+}
+/* slider and stories section end */

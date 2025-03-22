@@ -1,9 +1,10 @@
 let arrow = document.getElementById("up_downArrow");
 let arrow1 = document.getElementById("up_downArrow1");
+let arrow2 = document.getElementById("up_downArrow2");
 
-document.querySelectorAll(".dropdown").forEach((dropdown) => {
+document.querySelectorAll(".loginClass").forEach((dropdown) => {
   dropdown.addEventListener("mouseover", () => {
-    const menu = dropdown.querySelector(".dropdown-menu");
+    const menu = dropdown.querySelector(".loginclass-menu");
     if (menu) {
       arrow.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
       menu.classList.add("show");
@@ -11,26 +12,43 @@ document.querySelectorAll(".dropdown").forEach((dropdown) => {
   });
 
   dropdown.addEventListener("mouseleave", () => {
-    const menu = dropdown.querySelector(".dropdown-menu");
+    const menu = dropdown.querySelector(".loginclass-menu");
     if (menu) {
       arrow.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
       menu.classList.remove("show");
     }
   });
 });
+document.querySelectorAll(".categoryMenu").forEach((dropdown) => {
+  dropdown.addEventListener("mouseover", () => {
+    const menu = dropdown.querySelector(".category-menu");
+    if (menu) {
+      arrow2.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
+      menu.classList.add("show");
+    }
+  });
 
-document.querySelectorAll(".dropdown1").forEach((dropdown1) => {
-  dropdown1.addEventListener("mouseover", () => {
-    const menu1 = dropdown1.querySelector(".dropdown-menu1");
+  dropdown.addEventListener("mouseleave", () => {
+    const menu = dropdown.querySelector(".category-menu");
+    if (menu) {
+      arrow2.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
+      menu.classList.remove("show");
+    }
+  });
+});
+
+document.querySelectorAll(".moreClass").forEach((moreClass) => {
+  moreClass.addEventListener("mouseover", () => {
+    const menu1 = moreClass.querySelector(".moreclass-menu");
     if (menu1) {
       arrow1.innerHTML = '<i class="fa-solid fa-chevron-up"></i>';
       menu1.classList.add("show");
     }
   });
 
-  dropdown1.addEventListener("mouseleave", () => {
-    // Corrected from 'dropdown' to 'dropdown1'
-    const menu1 = dropdown1.querySelector(".dropdown-menu1");
+  moreClass.addEventListener("mouseleave", () => {
+    // Corrected from 'dropdown' to 'moreClass'
+    const menu1 = moreClass.querySelector(".moreclass-menu");
     if (menu1) {
       arrow1.innerHTML = '<i class="fa-solid fa-chevron-down"></i>';
       menu1.classList.remove("show");

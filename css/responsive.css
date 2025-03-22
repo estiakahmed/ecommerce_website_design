@@ -4,6 +4,27 @@
 
 /*992-1024*/
 @media only screen and (min-width: 992px) and (max-width: 1024px) {
+  .MenuBox ul li a{
+    font-size: 13px;
+  }
+  .dropdown.categoryMenu button{
+    font-size: 13px;
+  }
+  .MenuBox ul{
+    gap: 22px;
+  }
+  .category-menu::before {
+    content: "";
+    display: block;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #f0f8ff;
+    width: 0;
+    position: absolute;
+    top: -20px;
+    right: 89%;
+    transform: translateX(50%);
+    z-index: 1;
+}
 }
 
 /*768-991*/
@@ -24,6 +45,46 @@
     width: 86%;
     margin-left: 68px;
   }
+  .MenuBox ul li:nth-last-child(-n+3) {
+    display: none;
+  }
+  .MenuBox ul li a{
+    font-size: 12px;
+  }
+  .dropdown.categoryMenu button{
+    font-size: 12px;
+  }
+  .MenuBox ul{
+    gap: 22px;
+    padding: 0;
+  }
+  .category-menu::before {
+    content: "";
+    display: block;
+    border: 10px solid transparent;
+    border-bottom: 10px solid #f0f8ff;
+    width: 0;
+    position: absolute;
+    top: -20px;
+    right: 9%;
+    transform: translateX(50%);
+    z-index: 1;
+}
+.navDiv {
+  padding: 0px 2px;
+  background-color: #0a3a75;
+}
+.iconTextBox {
+  display: flex;
+  gap: 34px;
+}
+.icondiv{
+  margin: 11px 0px;
+}
+.iconTxt p{
+  font-size: 14px;
+}
+  
 }
 /*576-767*/
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -58,6 +119,41 @@
   .dropdown3 {
     width: 1%;
   }
+  .allcategories{
+    display: none;
+  }
+  .mobile_category_section{
+    display: block;
+  }
+  .iconBox{
+    gap: 66px;
+  }
+  .iconTextBox {
+    display: flex;
+    gap: 45px;
+  }
+  .icondiv{
+    margin: 5px 0px;
+    padding: 10px;
+  }
+  .iconTxt p{
+    font-size: 13px;
+    padding-top: 4px;
+  }
+  .hicon{
+    display: none !important;
+  }
+  .iconTxt {
+    display: block;
+    text-align: center;
+}
+.iconTxt img {
+  width: 70px;
+  height: 70px;
+}
+
+
+
 }
 /*480-575*/
 @media only screen and (min-width: 480px) and (max-width: 575px) {
@@ -85,6 +181,41 @@
     margin-left: 15px;
     margin-right: 9px;
   }
+  .allcategories{
+    display: none;
+  }
+  .mobile_category_section{
+    display: block;
+  }
+  .iconBox{
+    gap: 50px;
+  }
+  .iconBox{
+    gap: 50px;
+  }
+  .iconTextBox {
+    display: flex;
+    gap: 45px;
+  }
+  .icondiv{
+    margin: 5px 0px;
+    padding: 10px;
+  }
+  .iconTxt p{
+    font-size: 13px;
+    padding-top: 8px;
+  }
+  .hicon{
+    display: none !important;
+  }
+  .iconTxt {
+    display: block;
+    text-align: center;
+}
+.iconTxt img {
+  width: 50px;
+  height: 50px;
+}
 }
 /*425-479*/
 @media only screen and (min-width: 425px) and (max-width: 479px) {
@@ -123,6 +254,41 @@
   .dropdown3menu {
     width: 185px !important;
   }
+  .allcategories{
+    display: none;
+  }
+  .mobile_category_section{
+    display: block;
+  }
+  .iconBox{
+    gap: 42px;
+  }
+  .iconBox{
+    gap: 43px;
+  }
+  .iconTextBox {
+    display: flex;
+    gap: 37px;
+  }
+  .icondiv{
+    margin: 5px 0px;
+    padding: 10px;
+  }
+  .iconTxt p{
+    font-size: 13px;
+    padding-top: 4px;
+  }
+  .hicon{
+    display: none !important;
+  }
+  .iconTxt {
+    display: block;
+    text-align: center;
+}
+.iconTxt img {
+  width: 40px;
+  height: 40px;
+}
 }
 /*375-424*/
 @media only screen and (min-width: 375px) and (max-width: 424px) {
@@ -161,6 +327,42 @@
   .dropdown3menu {
     width: 185px !important;
   }
+  .allcategories{
+    display: none;
+  }
+  .mobile_category_section{
+    display: block;
+  }
+  .iconBox{
+    gap: 34px;
+    padding: 12px 0px;
+  }
+  .iconBox{
+    gap: 35px;
+  }
+  .iconTextBox {
+    display: flex;
+    gap: 25px;
+  }
+  .icondiv{
+    margin: 5px 0px;
+    padding: 10px;
+  }
+  .iconTxt p{
+    font-size: 13px;
+    padding-top: 4px;
+  }
+  .hicon{
+    display: none !important;
+  }
+  .iconTxt {
+    display: block;
+    text-align: center;
+}
+.iconTxt img {
+  width: 40px;
+  height: 40px;
+}
 }
 /*320-374*/
 @media only screen and (min-width: 320px) and (max-width: 374px) {
@@ -199,6 +401,42 @@
   .dropdown3menu {
     width: 185px !important;
   }
+  .allcategories{
+    display: none;
+  }
+  .mobile_category_section{
+    display: block;
+  }
+  .iconBox{
+    gap: 26px;
+    padding: 10px 0px;
+  }
+  .iconBox{
+    gap: 26px;
+  }
+  .iconTextBox {
+    display: flex;
+    gap: 19px;
+  }
+  .icondiv{
+    margin: 5px 0px;
+    padding: 10px;
+  }
+  .iconTxt p{
+    font-size: 11px;
+    padding-top: 4px;
+  }
+  .hicon{
+    display: none !important;
+  }
+  .iconTxt {
+    display: block;
+    text-align: center;
+}
+.iconTxt img {
+  width: 35px;
+  height: 35px;
+}
 }
 /* Ensure the dropdown stays within the screen */
 @media (max-width: 768px) {
