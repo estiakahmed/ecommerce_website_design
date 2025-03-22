@@ -254,7 +254,8 @@ ul.loginclass-menu3.show li {
 }
 
 .overlay.show {
-  display: block;
+  display: block !important;
+  z-index: 4;
 }
 
 .navbox {
@@ -533,13 +534,13 @@ div#sidebar {
 /* Style for carousel navigation buttons */
 .carousel-control-prev,
 .carousel-control-next {
-  width: 40px; /* Reduce width to keep it closer to the sides */
-  background-color: orange; /* Orange background */
-  opacity: 1; /* Make it fully visible */
+  width: 40px;
+  
+  opacity: 1; 
   border-radius: 0;
 }
 
-/* Attach navigation buttons to the left & right edges */
+
 .carousel-control-prev {
   left: 0;
 }
@@ -610,4 +611,463 @@ div#sidebar {
 .carousel-inner {
   border-radius: 5px;
 }
+.s_card {
+  position: relative;
+  display: inline-block;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.image-wrapper {
+  position: relative;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.s_card img {
+  width: 100%;
+  display: block;
+  border-radius: 5px;
+}
+
+.s_card p {
+  position: absolute;
+  bottom: -11px;
+  left: -2px;
+  color: white; 
+  padding: 0px 13px;
+  font-size: 14px;
+  border-radius: 5px;
+  z-index: 2;
+  font-weight: 700;
+}
+
+.image-wrapper::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .1) 20%, rgba(0, 0, 0, .8) 100%);
+  border-radius: 5px;
+}
+.topcards {
+  display: flex;
+  gap: 6px;
+}
+
+.topcards.bottomcards {
+  margin-top: 7px;
+}
+.storyTitle h4 {
+  writing-mode: vertical-lr;
+  transform: rotate(180deg);
+  font-size: 1.28rem;
+  color: white;
+}
+
+.image-wrapper img {
+  border-radius: 5px !important;
+}
+.storyDivs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  background: #778899;
+  padding: 9px 11px;
+  border-radius: 5px;
+}
+.s_card p:hover {
+  color: rgb(245, 222, 179);
+}
+.s_card:hover img {
+  transform: scale(1.1); 
+}
+.s_card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; 
+  transition: transform 0.3s ease; 
+}
 /* slider and stories section end */
+
+/* allcategory icon start */
+.cat_icon img {
+  width: 60px;
+  height: 60px;
+  transition: transform 0.3s ease; 
+  cursor: pointer;
+}
+
+.allIcons {
+  background: linear-gradient(-225deg, #d2f9f0 0%, #f6e9fc 48%, #c8c2fa 100%);
+  padding: 10px 28px;
+}
+
+.cat_icon p {
+  color: rgb(51, 51, 51);
+  font-size: 14px;
+  font-weight: 400;
+  transition: font-weight 0.3s ease; 
+  cursor: pointer;
+  margin-top: 6px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+
+.cat_icon:hover img {
+  transform: scale(1.1); 
+}
+
+.cat_icon:hover p {
+  font-weight: bold;
+}
+
+.allIcons {
+  display: flex;
+  gap: 23px;
+  margin: 14px 26px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px -1px #ccc;
+  border: 1px solid #0000000a;
+}
+.cat_icon.mobileItem {
+  display: none;
+}
+
+
+div#storyCol {
+    margin-right: 0;
+    padding-right: 0;
+}
+
+.carousel-item {
+    padding: 4px 0px;
+}
+.mobile_storySection{
+  display: none;
+}
+.storiesSlider {
+  width: 100%;
+  padding: 10px 0;
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  display: flex;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+
+@media (min-width: 320px) {
+  .swiper-slide {
+      width: 75%;
+  }
+}
+
+@media (min-width: 768px) {
+  .swiper-slide {
+      width: 60%; /* Adjust for tablets */
+  }
+}
+
+@media (min-width: 1024px) {
+  .swiper-slide {
+      width: 45%; /* Adjust for larger screens */
+  }
+}
+
+.storyDivs.mobileStorydivs {
+  padding: 0px 5px;
+}
+/* allcategory icon end*/
+/* amazon hub */
+.ahub a{
+  text-decoration: none;
+}
+
+
+.ahub {
+    text-align: center;
+}
+
+.ahub {
+    background: linear-gradient(to left,#f3e7e9 0%,#e3eeff 99%,#e3eeff 100%);
+    margin-bottom: 5px;
+    padding: 7px 0px;
+}
+
+.ahub img {
+    width: 40%;
+}
+.col-12.hubCol {
+  padding: 0px 2px;
+}
+
+.ahub i {
+  font-size: 19px;
+  color: black;
+}
+.amazon_hub{
+  display: none;
+}
+/* amazon hub end */
+
+
+/* main content section start */
+/* Main Content Section */
+section.main_content {
+  margin: 2px 36px;
+}
+
+.col-md-8.main_col {
+  padding-left: 0;
+}
+
+.popular_mobiles {
+  background: white;
+  padding-left: 0;
+  border-radius: 4px;
+  box-shadow: 1px 1px 2px -1px #ccc;
+  border: 1px solid gainsboro;
+}
+
+/* Header Section */
+.divHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 15px;
+  padding-top: 14px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+}
+
+.title h2 {
+  font-size: 20px;
+  margin: 0;
+}
+
+.btndiv a {
+  font-size: 14px;
+  text-decoration: none;
+}
+
+/* Product Layout */
+.products_row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 10px;
+  border-top: 1px solid #eeeeee;
+  padding-right: 10px;
+}
+
+
+/* Individual Product Box */
+.productdiv {
+  flex: 1;
+  padding: 10px;
+  border-left: 1px solid #eeeeee;
+  text-align: center;
+  padding-top: 18px;
+}
+
+/* Product Image */
+.imgdiv {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imgdiv img {
+  width: 86%;
+  max-width: 127px; /* Limits image size */
+  transition: transform 0.3s ease-in-out; /* Smooth zoom effect */
+}
+
+.imgdiv:hover img {
+  transform: scale(1.1);
+}
+
+/* Product Name and Price */
+.name_dot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding-top: 10px;
+}
+
+.name_price p {
+  font-size: 15px;
+  margin: 0;
+}
+
+.name_price h6 {
+  margin: 0;
+  color: #006400;
+  font-weight: bold;
+}
+
+/* Dots Icon */
+.dotop i {
+  color: #b2b2b2;
+  cursor: pointer;
+}
+
+.dotop i:hover {
+  color: black;
+}
+.name_price {
+  text-align: left;
+}
+.productdiv.firstProduct {
+  border-left: none;
+  padding-left: 15px;
+}
+.popular_mobiles.popular_cars {
+  background: linear-gradient(-225deg, #fffcdc, #f3e2ed);
+  margin-top: 22px;
+}
+.imgdiv.carimgdiv img {
+  width: 90% !important;
+  max-width: 150px;
+}
+
+/* blog section start */
+.blogsDiv {
+  padding: 5px 16px;
+}
+
+.blogimg {
+  width: 37%;
+}
+
+.blogimg img {
+  border-radius: 4px;
+  width: 100%;
+  height: 81px;
+  object-fit: cover;
+}
+
+.blogtitle h5 {
+  font-size: 17px !important;
+  margin: 0px;
+}
+
+.description p {
+  font-size: 13px;
+  color: rgb(119, 119, 119);
+  margin: 0;
+  padding-top: 3px;
+}
+
+.blogItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 17px;
+}
+.blogsDiv {
+  display: flex;
+  flex-direction: column;
+  gap: 21px;
+  padding-bottom: 15px;
+}
+.blogItem {
+  overflow: hidden;
+}
+
+.blogimg img {
+  transition: transform 0.3s ease-in-out;
+}
+
+.blogItem:hover .blogimg img {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.blogtitle h5 {
+  transition: color 0.3s ease-in-out;
+}
+
+.blogItem:hover .blogtitle h5 {
+  color: blue;
+  cursor: pointer;
+}
+.popular_mobiles.blog_section {
+  margin-top: 26px;
+}
+.imgdiv {
+  height: auto;
+  max-height: 120px;
+  overflow: hidden; /* Ensures images don't exceed the div */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.imgdiv img {
+  width: 100%; 
+  height: 100%; 
+  
+}
+.productdiv {
+  width: 250px; /* Set a fixed width for consistency */
+  height: auto; /* Set a fixed height for all products */
+  max-height: 240px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Ensures uniform spacing */
+  align-items: center;
+  padding: 23px 10px;
+  box-sizing: border-box;
+}
+
+.imgdiv {
+  width: 100%;
+  height: 228px; /* Fixed height for all images */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden; /* Prevents overflow */
+}
+
+.imgdiv img {
+  width: 100%;
+  height: 100%;
+   /* Ensures image fills the space without distortion */
+}
+
+.name_dot {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto; /* Pushes content to the bottom */
+  margin-top: 19px;
+}
+
+.name_price {
+  display: flex;
+  flex-direction: column;
+}
+
+.name_price p,
+.name_price h6 {
+  margin: 0;
+}
+.popular_mobiles.popularProducts {
+  margin-top: 21px;
+}
+/* blog section end */
+/* main content section end */
