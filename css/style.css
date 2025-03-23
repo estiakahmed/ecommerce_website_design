@@ -2151,6 +2151,63 @@ p.cnt {
 .popular_mobiles.related_mobiles {
   margin-top: 20px;
 }
+.related-box {
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  background-color: #f8f9fa;
+}
+.related-box ul {
+  padding-left: 15px;
+}
+.related-box ul li {
+  list-style-type: disc;
+  padding-bottom: 8px;
+}
+.related-box ul li a {
+  text-decoration: none;
+  color: #007af5 !important;
+  font-size: 14px;
+}
+.related-box ul li a:hover {
+  text-decoration: underline;
+}
+::marker {
+  color: #dfe1e8;
+}
+.related_search_compairdiv {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.compairsonDivpro {
+  width: 49%;
+}
+
+.relative_search {
+  width: 49%;
+}
+.related_search_compairdiv {
+  display: flex;
+  align-items: stretch;
+  gap: 20px; /* Adjust the spacing as needed */
+  margin-top: 20px;
+}
+
+.relative_search, .compairsonDivpro {
+  flex: 1; /* Make both divs take equal space */
+  display: flex;
+  flex-direction: column;
+}
+
+.related-box, .comparisonDiv {
+  flex: 1; /* Ensures both sections grow to the same height */
+}
+.comparisonDiv.productdestialcom.bg-white {
+  margin-top: 0;
+}
+
 /* latestnews section end */
 
 
