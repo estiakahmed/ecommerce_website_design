@@ -78,13 +78,13 @@
 .thum_img.active {
     border: 1px solid blue;
 }
-/* Thumbnail slider button styles */
+
 .btns {
     position: relative;
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: -25px; /* Moves arrows above the thumbnails */
+    margin-top: -25px;
 }
 
 .prevbtnt,
@@ -98,6 +98,7 @@
     position: relative;
     z-index: 2;
 }
+
 .productslide_img.thumimg {
     min-width: 22%;
     border: 1px solid #eeeeee;
@@ -105,64 +106,26 @@
     padding: 2px;
     border-radius: 4px;
 }
+
 .thumimg {
-    border: 2px solid transparent; /* Default border */
+    border: 2px solid transparent;
     cursor: pointer;
     transition: border 0.3s;
 }
 
 .thumimg.active {
-    border: 1px solid blue; /* Active thumbnail border color */
+    border: 1px solid blue;
 }
+
 .thumimg img {
-    filter: grayscale(100%); /* Make non-active images black & white */
+    filter: grayscale(100%);
     transition: filter 0.3s ease-in-out;
 }
 
 .thumimg.active img {
-    filter: grayscale(0%); /* Active image shows in full color */
-}
-/* Full-size modal container */
-.full-size-modal {
-    display: none; /* Hidden by default */
-    position: fixed;
-    z-index: 9999;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    align-items: center;
-    justify-content: center;
+    filter: grayscale(0%);
 }
 
-/* Modal content */
-.modal-content {
-    position: relative;
-    max-width: 90%;
-    max-height: 90%;
-}
-
-/* Close button */
-.close-btn {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 30px;
-    color: white;
-    cursor: pointer;
-    background-color: rgba(0, 0, 0, 0.5);
-    border-radius: 50%;
-    padding: 5px 10px;
-}
-
-/* Image inside the modal */
-#fullSizeImage {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-}
-/* Full-size image modal */
 .full-size-modal {
     display: none;
     position: fixed;
@@ -176,15 +139,12 @@
     justify-content: center;
 }
 
-/* Modal content */
 .modal-content {
     position: relative;
     max-width: 90%;
     max-height: 90%;
-    overflow: auto; /* Prevent image from overflowing */
 }
 
-/* Close button */
 .close-btn {
     position: absolute;
     top: 10px;
@@ -197,14 +157,52 @@
     padding: 5px 10px;
 }
 
-/* Full-size image styles */
 #fullSizeImage {
-    max-width: 100%;    /* Ensures the image fits within the modal */
-    max-height: 90vh;   /* Ensures the image doesn't take up more than 90% of the viewport height */
-    width: auto;        /* Maintains the aspect ratio of the image */
-    height: auto;       /* Maintains the aspect ratio of the image */
-    object-fit: contain; /* Ensures the image is not distorted */
+    width: 100%;
+    height: auto;
+    object-fit: contain;
 }
+
+.full-size-modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+    background-color: rgba(0, 0, 0, 0.5);
+    border-radius: 50%;
+    padding: 5px 10px;
+}
+
+#fullSizeImage {
+    max-width: 100%;
+    max-height: 90vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+
 .mainImg.thumbImgs {
     padding-top: 22px;
 }

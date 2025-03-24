@@ -81,62 +81,59 @@ document.addEventListener("click", function (event) {
   }
 });
 
-
-document.querySelectorAll('.slider-container').forEach((sliderContainer) => {
+document.querySelectorAll(".slider-container").forEach((sliderContainer) => {
   let currentIndex = 0;
   let isMouseDown = false;
   let startX;
   let scrollLeft;
 
-  const slider = sliderContainer.querySelector('.mobileNew');
-  const products = sliderContainer.querySelectorAll('.mobileProduct');
-  const productWidth = products[0].offsetWidth; 
+  const slider = sliderContainer.querySelector(".mobileNew");
+  const products = sliderContainer.querySelectorAll(".mobileProduct");
+  const productWidth = products[0].offsetWidth;
   const totalProducts = products.length;
 
   // Drag functionality
-  slider.addEventListener('mousedown', (e) => {
-      isMouseDown = true;
-      startX = e.pageX - slider.offsetLeft;
-      scrollLeft = slider.scrollLeft;
-      slider.style.cursor = 'grabbing';
+  slider.addEventListener("mousedown", (e) => {
+    isMouseDown = true;
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+    slider.style.cursor = "grabbing";
   });
 
-  slider.addEventListener('mouseleave', () => {
-      isMouseDown = false;
-      slider.style.cursor = 'grab';
+  slider.addEventListener("mouseleave", () => {
+    isMouseDown = false;
+    slider.style.cursor = "grab";
   });
 
-  slider.addEventListener('mouseup', () => {
-      isMouseDown = false;
-      slider.style.cursor = 'grab';
+  slider.addEventListener("mouseup", () => {
+    isMouseDown = false;
+    slider.style.cursor = "grab";
   });
 
-  slider.addEventListener('mousemove', (e) => {
-      if (!isMouseDown) return;
-      e.preventDefault();
+  slider.addEventListener("mousemove", (e) => {
+    if (!isMouseDown) return;
+    e.preventDefault();
 
-      const x = e.pageX - slider.offsetLeft;
-      const walk = (x - startX) * 3;
-      slider.scrollLeft = scrollLeft - walk;
+    const x = e.pageX - slider.offsetLeft;
+    const walk = (x - startX) * 3;
+    slider.scrollLeft = scrollLeft - walk;
   });
 
- 
   function moveSlide(direction) {
-      currentIndex += direction;
+    currentIndex += direction;
 
-      if (currentIndex < 0) {
-          currentIndex = totalProducts - 1;
-      } else if (currentIndex >= totalProducts) {
-          currentIndex = 0;
-      }
+    if (currentIndex < 0) {
+      currentIndex = totalProducts - 1;
+    } else if (currentIndex >= totalProducts) {
+      currentIndex = 0;
+    }
 
-      slider.style.transform = `translateX(-${currentIndex * productWidth}px)`;
+    slider.style.transform = `translateX(-${currentIndex * productWidth}px)`;
   }
 
- 
-  const prevButton = sliderContainer.querySelector('.prev');
-  const nextButton = sliderContainer.querySelector('.next');
+  const prevButton = sliderContainer.querySelector(".prev");
+  const nextButton = sliderContainer.querySelector(".next");
 
-  if (prevButton) prevButton.addEventListener('click', () => moveSlide(-1));
-  if (nextButton) nextButton.addEventListener('click', () => moveSlide(1));
+  if (prevButton) prevButton.addEventListener("click", () => moveSlide(-1));
+  if (nextButton) nextButton.addEventListener("click", () => moveSlide(1));
 });
