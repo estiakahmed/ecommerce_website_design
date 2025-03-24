@@ -112,6 +112,20 @@
     padding: 0;
   }
   /* category page end */
+    /* comparison page start */
+    .productitemdivcmp .phone-card img{
+      max-width: 94px;
+    }
+    .fixeddiv{
+      margin: 0px 14px !important;
+    }
+    .productitemdivcmp .price{
+      font-size: 13px;
+    }
+  
+    /* comparison page end */
+
+
 }
 /*576-767*/
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -280,6 +294,54 @@
     display: flex !important;
   }
   /* category page end */
+    /* comparison page start */
+    .productitemdivcmp .phone-card img{
+      max-width: 94px;
+    }
+    .fixeddiv{
+      margin: 0px 0px !important;
+    }
+    .productitemdivcmp .price{
+      font-size: 13px;
+    }
+    .add_productdiv {
+      display: none;
+  }
+  
+  .btndivcmp {
+      display: none;
+  }
+  small {
+    position: absolute;
+    left: 49%;
+    top: 50%;
+    transform: translate(-26%, -61%);
+    background-color: #EEEEEE;
+    color: #090808;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    margin-left: -2px;
+}
+.titledivcmp h4 {
+  font-size: 20px;
+}
+.cmpproductdiv.fixeddiv.fixed-top img {
+  width: 79px;
+}
+.add_product_btndiv {
+  display: block;
+}
+    /* comparison page end */
+
+
+
+
+
 }
 /*480-575*/
 @media only screen and (min-width: 480px) and (max-width: 575px) {
@@ -479,6 +541,49 @@
     display: flex !important;
   }
   /* category page end */
+  /* comparison page start */
+  .productitemdivcmp .phone-card img{
+    max-width: 94px;
+  }
+  .fixeddiv{
+    margin: -1px 0px !important;
+  }
+  .productitemdivcmp .price{
+    font-size: 13px;
+  }
+  .add_productdiv {
+    display: none;
+}
+
+.btndivcmp {
+    display: none;
+}
+small {
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  transform: translate(-26%, -61%);
+  background-color: #EEEEEE;
+  color: #090808;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: -2px;
+}
+.titledivcmp h4 {
+font-size: 20px;
+}
+.cmpproductdiv.fixeddiv.fixed-top img {
+width: 79px;
+}
+.add_product_btndiv {
+display: block;
+}
+  /* comparison page end */
 }
 /*425-479*/
 @media only screen and (min-width: 425px) and (max-width: 479px) {
@@ -694,6 +799,47 @@
     display: flex !important;
   }
   /* category page end */
+  /* comparison page start */
+  .productitemdivcmp .phone-card img{
+    max-width: 94px;
+  }
+  .fixeddiv{
+    margin: 0px 0px !important;
+  }
+  .productitemdivcmp .price{
+    font-size: 13px;
+  }
+  .add_productdiv {
+    display: none;
+}
+
+.btndivcmp {
+    display: none;
+}
+small {
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  transform: translate(-26%, -61%);
+  background-color: #EEEEEE;
+  color: #090808;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: -2px;
+}
+.titledivcmp h4 {font-size: 18px;}
+.cmpproductdiv.fixeddiv.fixed-top img {
+width: 79px;
+}
+.add_product_btndiv {
+display: block;
+}
+  /* comparison page end */
 }
 
 /*375-424*/
@@ -950,6 +1096,45 @@
     display: flex !important;
   }
   /* category page end */
+  /* comparison page start */
+  .productitemdivcmp .phone-card img{
+    max-width: 126px;
+  }
+  .fixeddiv{
+    margin: 0px 0px !important;
+  }
+  .productitemdivcmp .price{
+    font-size: 13px;
+  }
+  .add_productdiv {
+    display: none;
+}
+
+.btndivcmp {
+    display: none;
+}
+small {
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  transform: translate(-26%, -61%);
+  background-color: #EEEEEE;
+  color: #090808;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: -2px;
+}
+.titledivcmp h4 {font-size: 18px;}
+.cmpproductdiv.fixeddiv.fixed-top img {width: 100px;}
+.add_product_btndiv {
+display: block;
+}
+  /* comparison page end */
 }
 
 /*320-374*/
@@ -1233,4 +1418,45 @@
     display: flex !important;
   }
   /* category page end */
+  /* comparison page start */
+  .productitemdivcmp .phone-card img{
+    max-width: 94px;
+  }
+  .fixeddiv{
+    margin: 0px 0px !important;
+  }
+  .productitemdivcmp .price{
+    font-size: 13px;
+  }
+  .add_productdiv {
+    display: none;
+}
+
+.btndivcmp {
+    display: none;
+}
+small {
+  position: absolute;
+  left: 49%;
+  top: 50%;
+  transform: translate(-26%, -61%);
+  background-color: #EEEEEE;
+  color: #090808;
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%;
+  margin-left: -2px;
+}
+.titledivcmp h4 {font-size: 18px;}
+.cmpproductdiv.fixeddiv.fixed-top img {
+width: 79px;
+}
+.add_product_btndiv {
+display: block;
+}
+  /* comparison page end */
 }

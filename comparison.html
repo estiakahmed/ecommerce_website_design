@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Smartprix - Best Online Comparison Shopping</title>
+        <!-- FontAwesome CDN -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="stylesheet" href="css/detailspageresponsive.css">
+        <link rel="icon" href="image/apple-touch-icon.png" />
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    </head>
+
+    <body>
+        <main>
+            <!-- Navbar Start -->
+            <div class="navDiv fixed-top">
+                <div class="container-fluid desktop_menu">
+                    <div class="row navRow">
+                        <div class="col-xs-12 col-sm-2">
+                            <div class="logoBox">
+                                <a href="index.html">
+                                    <img src="image/sm_small.png" alt="Smartprix" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="searchBar">
+                                <div class="search-bar">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for products, brands & more ..." aria-label="Search" aria-describedby="search-addon" />
+                                        <button class="btn" type="button" id="search-addon">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="menuBar d-flex justify-content-between">
+                                <!-- Login Dropdown -->
+                                <div class="dropdown loginClass">
+                                    <button class="btn" type="button">
+                                        <i class="fa-solid fa-circle-user"></i> Login <span id="up_downArrow"><i class="fa-solid fa-chevron-down"></i></span>
+                                    </button>
+                                    <ul class="dropdown-menu loginclass-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Signup</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- More Dropdown -->
+                                <div class="dropdown1 moreClass">
+                                    <button class="btn" type="button">
+                                        More <span id="up_downArrow1"><i class="fa-solid fa-chevron-down"></i></span>
+                                    </button>
+                                    <ul class="dropdown-menu1 moreclass-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-twitter"></i> X (Twitter)</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-android"></i> Android App</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-newspaper"></i> Google News</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="MobileMenu">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="navbox">
+                                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                                    <div class="mlogo">
+                                        <a href="index.html">
+                                            <img src="image/sm_small.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <!-- Normal Search Bar -->
+                                    <div class="searchBar" id="searchBar">
+                                        <div class="search-bar">
+                                            <div class="input-group scgroup">
+                                                <input type="text" class="form-control" placeholder="Search for products, brands & more ..." id="searchInput" />
+                                                <button class="btn" type="button" id="search-addon">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Dropdown -->
+                                    <div class="dropdown dropdown3">
+                                        <button class="btn" type="button" id="dropdownButton">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown3menu" id="dropdownMenu">
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-plus"></i> Compare Queue</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-share-alt"></i> Share</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Sidebar Menu -->
+                                <div class="sidebar" id="sidebar">
+                                    <ul>
+                                        <li><a href="#">Login</a></li>
+                                        <li><a href="#">Sign Up</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Overlay for Sidebar -->
+                                <div class="overlay" id="overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar End -->
+            <!-- categories  -->
+            <section class="allcategories">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="MenuBox">
+                                <ul>
+                                    <li>
+                                        <a href="#">Mobiles</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tablets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Laptops</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">TVs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Electronics</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Appliances</a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown categoryMenu">
+                                            <button class="btn" type="button">
+                                                Computers <span id="up_downArrow2"><i class="fa-solid fa-chevron-down"></i></span>
+                                            </button>
+                                            <div class="dropdown-menu category-menu">
+                                                <div class="itemss">
+                                                    <div class="leftOptions">
+                                                        <div class="cate_gories">
+                                                            <h3>Categories</h3>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <h4>Computer Peripheras</h4>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="rightOptions">
+                                                        <div class="lop">
+                                                            <h3>Other Accessories</h3>
+                                                            <h4>Computer Peripheras</h4>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+
+                                                            <h4>Computer Peripheras</h4>
+
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Accessories</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Auto</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flights</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Deals</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Amazon Hub</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- mobile category section -->
+            <section class="mobile_category_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="iconBox">
+                                <div class="icon">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-comment"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-plane-circle-check"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-tv"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- mobile category section end-->
+            <!-- categories end -->
+
+
+
+            <!-- title and view section start -->
+             <section class="cmp_section">
+                <div class="container-fluid mycontainer">
+                    <div class="row">
+                        <div class="col-12 topcontentcol">
+                            <div class="titledivcmp">
+                                <h4>Nothing Phone 3a Pro <span>vs</span> Nothing Phone 3a
+                                </h4>
+                            </div>
+                            <div class="topdescmp">
+                                <p>
+                                    Here you can compare Nothing Phone 3a Pro and Nothing Phone 3a. Comparing Nothing Phone 3a Pro vs Nothing Phone 3a on Smartprix enables you to check their respective specs scores and unique features. It would potentially help you understand how Nothing Phone 3a Pro stands against Nothing Phone 3a and which one should you buy The current lowest price found for Nothing Phone 3a Pro is ₹29,399 and for Nothing Phone 3a is ₹23,599. The details of both of these products were last updated on Mar 25, 2025.
+
+
+                                </p>
+                            </div>
+                            <div class="readmorediv">
+                                <p class="d-inline-flex gap-1">
+                                    <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false"
+                                        aria-controls="collapseExample" id="toggleButton" onclick="toggleText()">
+                                        Read More
+                                    </a>
+                                </p>
+                                <div class="collapse" id="collapseExample">
+                                    <div class="card card-body">
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered table-striped">
+                                                <thead>
+                                                    <tr>
+                                                        <th style="width: 10%;">Specification</th>
+                                                        <th style="width: 45%;">Nothing Phone 3a Pro</th>
+                                                        <th style="width: 45%;">Nothing Phone 3a</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>Battery</td>
+                                                        <td>5000 mAh</td>
+                                                        <td>5000 mAh</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Display</td>
+                                                        <td>6.77 inches, 1080 x 2392 pixels, 120 Hz</td>
+                                                        <td>6.77 inches, 1080 x 2392 pixels, 120 Hz</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>RAM</td>
+                                                        <td>8 GB</td>
+                                                        <td>8 GB</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Rear Camera</td>
+                                                        <td>
+                                                            <strong>50 MP ƒ/1.9 (Wide Angle)</strong><br>
+                                                            24mm (wide), 1/1.57", 1.0µm, dual pixel PDAF, OIS, 84.5° FOV<br>
+                                                            <strong>50 MP ƒ/2.6 (Telephoto)</strong><br>
+                                                            70mm (periscope telephoto) (15cm - ∞), 1/1.95", 0.8µm, PDAF, OIS, 3x optical zoom, 33.6° FOV<br>
+                                                            <strong>8 MP ƒ/2.2 (Ultra Wide)</strong><br>
+                                                            15mm, 120° (ultrawide), 1/4.0", 1.12µm
+                                                        </td>
+                                                        <td>
+                                                            <strong>50 MP ƒ/1.9 (Wide Angle)</strong><br>
+                                                            24mm (wide), 1/1.57", 1.0µm, PDAF, OIS, 84.5° FOV<br>
+                                                            <strong>50 MP ƒ/2 (Telephoto)</strong><br>
+                                                            50mm, 1/2.74", 0.64µm, PDAF (25cm - ∞), 2x optical zoom, 49.5° FOV<br>
+                                                            <strong>8 MP ƒ/2.2 (Ultra Wide)</strong><br>
+                                                            15mm, 120° FOV, 1/4.0", 1.12µm
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>OS</td>
+                                                        <td>Android v15</td>
+                                                        <td>Android v15</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>Price</td>
+                                                        <td>₹29,399</td>
+                                                        <td>₹23,599</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- compair products div -->
+                            <div class="cmpproductdiv">
+                                <div class="btndivcmp">
+                                    <div class="allbtnscmp">
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart"></i>Like
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart"></i>Like
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart"></i>Like
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="productitemdivcmp">
+                                    <div class="phone-card position-relative">
+                                        <div class="rank-badge">#1</div>
+                                        <span class="close-icon"><i class="fa-solid fa-xmark"></i></span>
+                                        <img src="image/nothing-phone-3a-pro.webp" alt="Nothing Phone 3a Pro" class="img-fluid mb-2">
+                                        <h5>Nothing Phone 3a Pro</h5>
+                                        <p class="price">₹29,399 <span class="discount">▼2%</span></p>
+                                        <p class="starpp">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="productitemdivcmp">
+                                    <div class="phone-card position-relative">
+                                        <div class="rank-badge">#1</div>
+                                        <span class="close-icon"><i class="fa-solid fa-xmark"></i></span>
+                                        <img src="image/nothing-phone-3a-pro.webp" alt="Nothing Phone 3a Pro" class="img-fluid mb-2">
+                                        <h5>Nothing Phone 3a Pro</h5>
+                                        <p class="price">₹29,399 <span class="discount">▼2%</span></p>
+                                        <p class="starpp">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="add_productdiv openCompare" >
+                                    <div class="add-product-card text-center">
+                                        <div class="add-icon">
+                                            +
+                                        </div>
+                                        <div class="add-text">Add Product</div>
+                                    </div>
+                                </div>
+                                <div class="add_productdiv openCompare" >
+                                    <div class="add-product-card text-center">
+                                        <div class="add-icon">
+                                            +
+                                        </div>
+                                        <div class="add-text">Add Product</div>
+                                    </div>
+                                </div>
+                                <small>vs</small>
+                            </div>
+
+                            <!-- compair products div end -->
+                            <!-- compair products div -->
+                            <div class="cmpproductdiv fixeddiv fixed-top">
+                                <div class="btndivcmp">
+                                    <div class="allbtnscmp">
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart"></i>Like
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart"></i>Like
+                                        </a>
+                                        <a href="#">
+                                            <i class="fa-solid fa-heart"></i>Like
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="productitemdivcmp">
+                                    <div class="phone-card position-relative">
+                                        <div class="rank-badge">#1</div>
+                                        <span class="close-icon"><i class="fa-solid fa-xmark"></i></span>
+                                        <img src="image/nothing-phone-3a-pro.webp" alt="Nothing Phone 3a Pro" class="img-fluid mb-2">
+                                        <h5>Nothing Phone 3a Pro</h5>
+                                        <p class="price">₹29,399 <span class="discount">▼2%</span></p>
+                                        <p class="starpp">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="productitemdivcmp">
+                                    <div class="phone-card position-relative">
+                                        <div class="rank-badge">#1</div>
+                                        <span class="close-icon"><i class="fa-solid fa-xmark"></i></span>
+                                        <img src="image/nothing-phone-3a-pro.webp" alt="Nothing Phone 3a Pro" class="img-fluid mb-2">
+                                        <h5>Nothing Phone 3a Pro</h5>
+                                        <p class="price">₹29,399 <span class="discount">▼2%</span></p>
+                                        <p class="starpp">
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                            <i class="fa-solid fa-star"></i>
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="add_productdiv">
+                                    <div class="add-product-card text-center">
+                                        <div class="add-icon">
+                                            +
+                                        </div>
+                                        <div class="add-text">Add Product</div>
+                                    </div>
+                                </div>
+                                <div class="add_productdiv">
+                                    <div class="add-product-card text-center">
+                                        <div class="add-icon">
+                                            +
+                                        </div>
+                                        <div class="add-text">Add Product</div>
+                                    </div>
+                                </div>
+                                <small>vs</small>
+                            </div>
+                              <!-- Background Overlay -->
+    <div class="overlay" id="overlay"></div>
+                            <!-- compair products div end -->
+                             <!-- add product btn -->
+                              <div class="add_product_btndiv">
+                                <a href="#" class="openCompare">ADD ANOTHER PRODUCT</a>
+                              </div>
+                                <!-- add product btn end -->
+
+                                    <!-- Slide-up Comparison Panel -->
+    <div class="compare-panel" id="comparePanel">
+        <div class="compare-header">
+            <span class="close-btn" id="closeCompare">&times;</span>
+            <h5 class="m-0">Add Product to Comparison</h5>
+        </div>
+        <div class="addpaneldiv">
+            <p class="mt-3">Search or select a product and it'll be added to comparison.</p>
+        <input type="text" class="form-control mt-2" placeholder="Search for a product...">
+        </div>
+    </div>
+                        </div>
+                    </div>
+                </div>
+             </section>
+            <!-- title and view section end -->
+
+             <p>
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consequuntur aut ex laudantium quibusdam quaerat iure in illo ut saepe quae minima nesciunt, quas culpa, cum doloremque amet, a obcaecati repellat?
+             </p>
+        </main>
+        <footer class="text-light py-4">
+            <div class="container-fluid">
+                <div class="row menuRowfooter">
+                    <div class="col-md-3 text-center text-md-start mb-3 logoanasocalf">
+                        <a href="index.html" class="d-block mb-3">
+                            <img src="image/sm_small.png" alt="Smartprix" width="186" height="60" />
+                        </a>
+                        <div class="social_icons">
+                            <div class="first4">
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-facebook-f"></i></a>
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-twitter"></i></a>
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-youtube"></i></a>
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-instagram"></i></a>
+                            </div>
+                            <div class="second4">
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-telegram-plane"></i></a>
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-linkedin"></i></a>
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-whatsapp"></i></a>
+                                <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-pinterest"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9">
+                        <div class="row">
+                            <div class="col-sm-6 col-md-3 mb-3">
+                                <h5>Categories</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-light">Mobile Phones</a></li>
+                                    <li><a href="#" class="text-light">Tablets</a></li>
+                                    <li><a href="#" class="text-light">Cars</a></li>
+                                    <li><a href="#" class="text-light">Laptops</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3 mb-3">
+                                <h5>Mobile Brands</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-light">Samsung Mobiles</a></li>
+                                    <li><a href="#" class="text-light">Apple iPhones</a></li>
+                                    <li><a href="#" class="text-light">Realme Mobiles</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3 mb-3">
+                                <h5>Mobile Lists</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-light">Smartphones</a></li>
+                                    <li><a href="#" class="text-light">5G Mobiles</a></li>
+                                    <li><a href="#" class="text-light">Waterproof Mobiles</a></li>
+                                </ul>
+                            </div>
+                            <div class="col-sm-6 col-md-3 mb-3">
+                                <h5>About</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#" class="text-light">About Smartprix</a></li>
+                                    <li><a href="#" class="text-light">Contact Us</a></li>
+                                    <li><a href="#" class="text-light">Privacy Policy</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="socialMobilemenu">
+                    <div class="first4">
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+
+                <div class="cpy_right">
+                    <div class="row">
+                        <div class="col-md-6 text-white">
+                            <p class="cpyrightext">Copyright © 2025, Smartprix.com. All Rights Reserved</p>
+                        </div>
+                        <div class="col-md-6 text-white">
+                            <div class="bottom_menu">
+                                <ul>
+                                    <li>
+                                        <a href="#">
+                                            Contact Us
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            Privacy Policy
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Terms and Conditions</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="js/script.js"></script>
+        <script>
+            var swiper = new Swiper(".storiesSlider", {
+                slidesPerView: "auto",
+                spaceBetween: 5,
+                breakpoints: {
+                    320: {
+                        slidesPerView: 2,
+                        centeredSlides: true,
+                    },
+                    768: {
+                        slidesPerView: 4,
+                    },
+                },
+            });
+        </script>
+        <script>
+            function toggleText() {
+                let button = document.getElementById("toggleButton");
+                if (button.innerText === "Read More") {
+                    button.innerText = "Show Less";
+                } else {
+                    button.innerText = "Read More";
+                }
+            }
+            
+        </script>
+       <!-- <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            let cmpproductdiv = document.querySelector(".cmpproductdiv");
+            let fixeddiv = document.querySelector(".fixeddiv");
+    
+            window.addEventListener("scroll", function () {
+                let cmpproductdivRect = cmpproductdiv.getBoundingClientRect();
+                let cmpproductdivMiddle = cmpproductdivRect.top + (cmpproductdivRect.height / 2);
+    
+                if (cmpproductdivMiddle < window.innerHeight / 2) {
+                    fixeddiv.style.display = "flex"; 
+                } else {
+                    fixeddiv.style.display = "none"; 
+                }
+            });
+        });
+    </script> -->
+       <script>
+        $(document).ready(function () {
+            $(".openCompare").click(function (e) {
+                e.preventDefault();
+                $("#comparePanel, #overlay").addClass("show");
+            });
+    
+            $("#closeCompare, #overlay").click(function () {
+                $("#comparePanel, #overlay").removeClass("show");
+            });
+        });
+    </script>
+    
+ 
+    </body>
+</html>

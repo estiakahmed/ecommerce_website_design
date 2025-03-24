@@ -2501,7 +2501,7 @@ ul.list-unstyled.mt-2.small li {
   align-items: center;
   font-size: 13px;
   gap: 9px;
-  padding-bottom: 10px;
+  padding-bottom: 7px;
   color: #757575;
 }
 .product-card {
@@ -2550,6 +2550,7 @@ ul.list-unstyled.mt-2.small li {
   color: green;
   font-size: 1.5rem;
   font-weight: bold;
+  
 }
 
 .actions button {
@@ -2569,21 +2570,22 @@ ul.list-unstyled.mt-2.small li {
 .imgdivcatpro {
   width: 20%;
   cursor: pointer;
+  text-align: center;
 }
 
 .imgdivcatpro img {
-  width: 96%;
+  width: 70%;
 }
 .d-flex.gap-3.mt-2.actions {
   gap: 30px !important;
   background: #f0f8ff;
-  padding: 10px 0px;
+  padding: 5px 0px;
 }
 .priceTitled {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-bottom: 14px;
+  padding-bottom: 5px;
 }
 .startsdive i {
   color: #ccad00;
@@ -2816,4 +2818,373 @@ section.mainContentSection {
 .fixed-bottom-bar.d-flex.justify-content-between {
   display: none !important;
 }
+ul.list-unstyled.mt-2.small li:last-child {
+  padding-bottom: 0;
+}
 /* category page end */
+/* comparison page start */
+table.table.table-bordered.table-striped {
+  border-color: #eee;
+  margin-bottom: 24px;
+}
+.col-12.topcontentcol {
+  background: white;
+  padding: 10px 0px;
+  padding-bottom: 0px;
+  margin-top: 20px;
+  border: 1px solid #c0c0c0;
+}
+
+.titledivcmp h4 {
+  font-size: 28px;
+}
+
+.titledivcmp h4 span {
+  font-size: 14px;
+  font-weight: bold;
+  color: gray;
+  padding: 0px 10px;
+}
+
+.topdescmp p {
+  font-size: 13px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  color: #757575;
+}
+.readmorediv p {
+  width: 100%;
+  justify-content: end;
+  font-size: 13px;
+  padding-bottom: 0;
+  margin-bottom: 6px;
+}
+
+.readmorediv p a {
+  text-decoration: none;
+}
+.titledivcmp {
+  padding: 0 15px;
+  padding-top: 10px;
+}
+
+.topdescmp {
+  padding: 0px 15px;
+}
+
+.readmorediv {
+  padding: 0px 15px;
+}
+.allbtnscmp a {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  text-decoration: none;
+  padding: 10px 15px;
+  color: #ff69b4;
+  text-align: center;
+  justify-content: center;
+}
+
+.allbtnscmp {
+  background: #EBF5FF;
+  width: 78%;
+}
+.phone-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  text-align: center;
+  background: #fff;
+  position: relative;
+  overflow: hidden;
+}
+.rank-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background: green;
+  color: white;
+  padding: 5px 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  z-index: 10;
+}
+.close-icon {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  font-size: 20px;
+  color: #888;
+  z-index: 10;
+}
+.price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: green;
+}
+.discount {
+  color: red;
+  font-size: 0.9rem;
+}
+.productitemdivcmp .phone-card img {
+  max-width: 145px; /* Set a max-width based on the original image size */
+  width: auto; /* Maintain the natural width */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove extra spacing */
+  margin: 0 auto; /* Center the image */
+  transition: transform 0.3s ease-in-out; /* Smooth scaling effect */
+  cursor: pointer;
+}
+
+.productitemdivcmp .phone-card:hover img {
+  transform: scale(1.07); /* Zooms in slightly on hover */
+}
+.productitemdivcmp p {
+  text-align: left;
+}
+
+.productitemdivcmp h5 {
+  text-align: left;
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0;
+  padding-top: 9px;
+}
+
+.productitemdivcmp h5:hover {
+  color: blue;
+}
+
+.productitemdivcmp .price {
+  font-size: 16px;
+  color: #006400 !important;
+  margin: 0;
+  padding-top: 5px;
+}
+p.starpp {
+  display: flex;
+  gap: 4px;
+  font-size: 14px;
+  padding-top: 4px;
+  color: #CCAD00;
+  margin: 0;
+}
+.add_productdiv {
+  flex: 1; /* Ensures equal space distribution */
+  display: flex; /* Allows child to stretch */
+}
+
+.add-product-card {
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+
+  width: 100%; /* Ensures it takes full width */
+  height: 100%; /* Fills the parent container */
+}
+
+
+.add-product-card:hover {
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.add-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #007bff;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.add-text {
+  margin-top: 10px;
+  font-size: 16px;
+  color: #333;
+}
+.cmpproductdiv {
+  display: flex;
+  gap: 0px; /* Adds some space between the flex items */
+  align-items: flex-start; /* Align items to the top */
+}
+
+.btndivcmp {
+  flex: 0 0 10%; /* Takes exactly 10% of the available space */
+}
+
+.productitemdivcmp,
+.add_productdiv {
+  flex: 1; /* Each item will take equal space */
+  min-width: 0; /* Prevents items from overflowing */
+}
+.cmpproductdiv {
+  display: flex;
+  gap: 0px;
+  position: relative; 
+  align-items: stretch; /* Ensures all children stretch to the same height */
+}
+
+.btndivcmp {
+  flex: 0 0 15%;
+}
+
+.productitemdivcmp,
+.add_productdiv {
+  flex: 1;
+  display: flex; /* Ensures the child fills height */
+}
+
+.phone-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  border-right: 0px;
+}
+
+.add-product-card {
+  border: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  cursor: pointer;
+  transition: box-shadow 0.3s;
+  width: 100%;
+  height: 100%;
+  flex-grow: 1; /* Ensures it stretches */
+  border-right: 0px;
+}
+
+
+small {
+  position: absolute;
+  left: 36%;
+  top: 50%;
+  transform: translate(-36%, -46%);
+  background-color: #EEEEEE; /* Change to your preferred color */
+  color: #090808; /* White text */
+  font-weight: bold;
+  font-size: 18px;
+  text-align: center;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 50%; /* Makes it circular */
+  margin-left: -2px;
+}
+.fixeddiv {
+  position: fixed;
+  top: 57px; /* Adjust this based on your navbar height */
+  right: 0;
+  background: white;
+  /* padding: 15px; */
+  z-index: 1000; /* Make sure it appears above other elements */
+  overflow-y: auto; /* Enable scrolling if content overflows */
+  max-height: calc(100vh - 80px); /* Prevent overflow beyond the screen */
+  margin: 0px 39px;
+  display: none;
+  box-shadow: 0 1px 6px 1px #ccc;
+  border-radius: 5px;
+}
+
+.cmpproductdiv.fixeddiv.fixed-top img {
+  width: 100px;
+}
+.add_product_btndiv {
+  padding: 15px 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.add_product_btndiv a {
+  text-align: center;
+  color: #FB641B;
+  text-decoration: none;
+  font-weight: 600;
+}
+        /* Overlay */
+        .overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: rgba(0, 0, 0, 0.5);
+          display: none;
+          z-index: 1040;
+      }
+
+      /* Popup panel */
+      .compare-panel {
+          position: fixed;
+          bottom: -100%;
+          left: 50%;
+          transform: translateX(-50%);
+          width: 90%;
+          max-width: 600px;
+          height: 60vh; /* Increased height */
+          background: #fff;
+          box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+          transition: bottom 0.4s ease-in-out;
+          padding: 0px;
+          border-radius: 15px;
+          z-index: 1050;
+      }
+
+      /* Show classes */
+      .overlay.show {
+          display: block;
+      }
+      .compare-panel.show {
+          bottom: 20%;
+      }
+
+      /* Header */
+      .compare-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          border-bottom: 1px solid #ddd;
+          padding-bottom: 10px;
+      }
+
+      .close-btn {
+          cursor: pointer;
+          font-size: 24px;
+          font-weight: bold;
+          color: #ffffff;
+      }
+
+      .compare-header {
+        background: rgb(2,123,227);
+        border-radius: 10px 10px 0px 0px;
+        color: white;
+        padding: 2px 15px;
+ 
+    }
+    
+    .compare-header h5 {
+        font-size: 16px;
+    }
+    .addpaneldiv {
+      padding: 0px 24px;
+  }
+  
+  .addpaneldiv p {font-size: 15px;}
+  .add_product_btndiv{
+    display: none;
+  }
+/* comparison page end */
