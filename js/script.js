@@ -137,3 +137,11 @@ document.querySelectorAll(".slider-container").forEach((sliderContainer) => {
   if (prevButton) prevButton.addEventListener("click", () => moveSlide(-1));
   if (nextButton) nextButton.addEventListener("click", () => moveSlide(1));
 });
+function toggleText() {
+  let button = document.getElementById("toggleButton");
+  if (button.innerText === "Read More") {
+      button.innerText = "Show Less";
+  } else {
+      button.innerText = "Read More";
+  }
+}

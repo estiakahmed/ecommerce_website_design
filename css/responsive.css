@@ -237,6 +237,7 @@
   }
   .mobile_category_section {
     display: block;
+    margin-top: 64px;
   }
   .iconBox {
     gap: 66px;
@@ -440,7 +441,8 @@
     display: none;
   }
   .mobile_category_section {
-    display: block;
+    display: flex;
+    margin-top: 56px;
   }
   .iconBox {
     gap: 50px;
@@ -664,7 +666,8 @@
     display: none;
   }
   .mobile_category_section {
-    display: block;
+    display: flex;
+    margin-top: 64px;
   }
   .iconBox {
     gap: 42px;
@@ -790,7 +793,7 @@
   /* popular tv end */
 
   .mobileimg img {
-    width: 121px;
+    width: 100%;
   }
   .mobileProduct {
     flex: 0 0 auto;
@@ -898,7 +901,8 @@
     display: none;
   }
   .mobile_category_section {
-    display: block;
+    display: flex;
+    margin-top: 64px;
   }
   .iconBox {
     gap: 34px;
@@ -1138,6 +1142,7 @@
   }
   .mobile_category_section {
     display: block;
+    margin-top: 64px;
   }
   .iconBox {
     gap: 26px;

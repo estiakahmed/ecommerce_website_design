@@ -1,0 +1,1377 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Smartprix - Best Online Comparison Shopping</title>
+        <!-- FontAwesome CDN -->
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+            integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+            crossorigin="anonymous"
+            referrerpolicy="no-referrer"
+        />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/responsive.css" />
+        <link rel="stylesheet" href="css/detailspageresponsive.css">
+        <link rel="icon" href="image/apple-touch-icon.png" />
+    </head>
+   <style>
+      .modal-header {
+  background: #0A3A75;
+  color: white;
+}
+.btn-close {
+  filter: invert(1);
+}
+.category-panel {
+  position: fixed;
+  bottom: -100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  transition: bottom 0.3s ease-in-out;
+  padding: 15px;
+  z-index: 1200;
+}
+.category-panel.active {
+  bottom: 0;
+
+  padding: 0px;
+  margin: 0px;
+}
+div#categoryPanel .modal-header {
+    padding: 10px 15px;
+}
+   </style>
+
+    <body>
+        <main>
+            <!-- Navbar Start -->
+            <div class="navDiv fixed-top">
+                <div class="container-fluid desktop_menu">
+                    <div class="row navRow">
+                        <div class="col-xs-12 col-sm-2">
+                            <div class="logoBox">
+                                <a href="index.html">
+                                    <img src="image/sm_small.png" alt="Smartprix" />
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-7">
+                            <div class="searchBar">
+                                <div class="search-bar">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search for products, brands & more ..." aria-label="Search" aria-describedby="search-addon" />
+                                        <button class="btn" type="button" id="search-addon">
+                                            <i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-sm-3">
+                            <div class="menuBar d-flex justify-content-between">
+                                <!-- Login Dropdown -->
+                                <div class="dropdown loginClass">
+                                    <button class="btn" type="button">
+                                        <i class="fa-solid fa-circle-user"></i> Login <span id="up_downArrow"><i class="fa-solid fa-chevron-down"></i></span>
+                                    </button>
+                                    <ul class="dropdown-menu loginclass-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-arrow-right-to-bracket"></i> Login</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-user"></i> Signup</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <!-- More Dropdown -->
+                                <div class="dropdown1 moreClass">
+                                    <button class="btn" type="button">
+                                        More <span id="up_downArrow1"><i class="fa-solid fa-chevron-down"></i></span>
+                                    </button>
+                                    <ul class="dropdown-menu1 moreclass-menu">
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-facebook"></i> Facebook</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-twitter"></i> X (Twitter)</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-youtube"></i> Youtube</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-instagram"></i> Instagram</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-telegram"></i> Telegram</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-brands fa-android"></i> Android App</a>
+                                        </li>
+                                        <li>
+                                            <a class="dropdown-item" href="#"><i class="fa-solid fa-newspaper"></i> Google News</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="MobileMenu">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-xs-12">
+                                <div class="navbox">
+                                    <i class="fa-solid fa-bars" id="menu-icon"></i>
+                                    <div class="mlogo">
+                                        <a href="index.html">
+                                            <img src="image/sm_small.png" alt="" />
+                                        </a>
+                                    </div>
+                                    <!-- Normal Search Bar -->
+                                    <div class="searchBar" id="searchBar">
+                                        <div class="search-bar">
+                                            <div class="input-group scgroup">
+                                                <input type="text" class="form-control" placeholder="Search for products, brands & more ..." id="searchInput" />
+                                                <button class="btn" type="button" id="search-addon">
+                                                    <i class="fas fa-search"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Dropdown -->
+                                    <div class="dropdown dropdown3">
+                                        <button class="btn" type="button" id="dropdownButton">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </button>
+                                        <ul class="dropdown-menu dropdown3menu" id="dropdownMenu">
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-sign-in-alt"></i> Login</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-user-plus"></i> Sign Up</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-bell"></i> Notifications</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-circle-plus"></i> Compare Queue</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-phone"></i> Contact Us</a>
+                                            </li>
+                                            <li>
+                                                <a class="dropdown-item" href="#"><i class="fa-solid fa-share-alt"></i> Share</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <!-- Sidebar Menu -->
+                                <div class="sidebar" id="sidebar">
+                                    <ul>
+                                        <li><a href="#">Login</a></li>
+                                        <li><a href="#">Sign Up</a></li>
+                                    </ul>
+                                </div>
+                                <!-- Overlay for Sidebar -->
+                                <div class="overlay" id="overlay"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Navbar End -->
+            <!-- categories  -->
+            <section class="allcategories">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="MenuBox">
+                                <ul>
+                                    <li>
+                                        <a href="#">Mobiles</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Tablets</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Laptops</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">TVs</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Electronics</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Appliances</a>
+                                    </li>
+                                    <li>
+                                        <div class="dropdown categoryMenu">
+                                            <button class="btn" type="button">
+                                                Computers <span id="up_downArrow2"><i class="fa-solid fa-chevron-down"></i></span>
+                                            </button>
+                                            <div class="dropdown-menu category-menu">
+                                                <div class="itemss">
+                                                    <div class="leftOptions">
+                                                        <div class="cate_gories">
+                                                            <h3>Categories</h3>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <h4>Computer Peripheras</h4>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <div class="rightOptions">
+                                                        <div class="lop">
+                                                            <h3>Other Accessories</h3>
+                                                            <h4>Computer Peripheras</h4>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+
+                                                            <h4>Computer Peripheras</h4>
+
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+
+                                                            <div class="option_s">
+                                                                <img src="image/m0kKhjVX.webp" alt="" />
+                                                                <p>Laptops</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <a href="#">Accessories</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Auto</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Flights</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">News</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Deals</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">Amazon Hub</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- mobile category section -->
+            <section class="mobile_category_section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xs-12">
+                            <div class="iconBox">
+                                <div class="icon">
+                                    <i class="fa-solid fa-house"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-comment"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-plane-circle-check"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-mobile-screen"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-laptop"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-tv"></i>
+                                </div>
+                                <div class="icon">
+                                    <i class="fa-solid fa-car"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- mobile category section end-->
+            <!-- categories end -->
+             <section class="catmenu">
+    <div class="container-fluid mycontainer">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="newsnavigationdiv">
+                    <div class="newslogotxt">
+                        <h4>News</h4>
+                    </div>
+                    <div class="newsMenus">
+                        <ul>
+                            <li><i class="fa-solid fa-magnifying-glass"></i> <a href="#" class="newsSearch">Search</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                            <li><a href="#">Home</a></li>
+                        </ul>
+                    </div>
+                    <div class="mobileview">
+                        <ul>
+                            <li> <a href="#" class="newsSearch"><i class="fa-solid fa-magnifying-glass"></i></a></li>
+                        <li><a href="#" id="filterIcon"><i class="fa-solid fa-filter"></i></a></li>
+                        <li><a href="#">News</a></li>
+                        <li><a href="#">Reviews</a></li>
+                        </ul>
+                    </div>
+                </div>
+                        </div>
+                    </div>
+                </div>
+                
+             </section>
+                 <!-- Search Modal -->
+    <div class="modal fade" id="searchModal" tabindex="-1" aria-labelledby="searchModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="searchModalLabel">Search News</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="p-3 bg-white rounded shadow">
+                        <input type="text" class="form-control" placeholder="Search...">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+     <!-- Category Panel -->
+     <div class="category-panel" id="categoryPanel">
+        <div class="d-flex justify-content-between align-items-center mb-3 modal-header">
+            <h5>Categories</h5>
+            <button type="button" class="btn-close" id="closeCategory"></button>
+        </div>
+        <ul class="list-group">
+            <li class="list-group-item">Technology</li>
+            <li class="list-group-item">Business</li>
+            <li class="list-group-item">Health</li>
+            <li class="list-group-item">Sports</li>
+            <li class="list-group-item">Entertainment</li>
+        </ul>
+    </div>
+
+    <!-- blog details -->
+     <section class="blog_details">
+        <div class="container-fluid mycontainer">
+            <div class="row blog_details_row">
+                <div class="col-8 details_col_blog">
+                    <div class="blog_title_img_topssection">
+                        <div class="blog_title_and_tag">
+                            <span class="btn btn-primary cat_tag">News</span>
+                            <h1>Motorola Razr 60 Ultra Wooden Back version Renders Surface Online: Specs Tipped
+                            </h1>
+                            <div class="name_date">
+                                <p>By <b><a href="#">Shivangi Agarwal</a></b>  •  Updated On <b>23 Mar 2025</b></p>
+                            </div>
+                        </div>
+                        <div class="feature_image">
+                            <img src="image/6-19.webp" alt="">
+                        </div>
+                        <div class="fourButtons catpag">
+                            <button>
+                                <a href="#">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    Compare
+                                </a>
+                            </button>
+                            <button>
+                                <a href="#">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    Compare
+                                </a>
+                            </button>
+                            <button>
+                                <a href="#">
+                                    <i class="fa-solid fa-circle-plus"></i>
+                                    Compare
+                                </a>
+                            </button>
+                        </div>
+    
+                        <div class="cpsdiv">
+                            <p class="d-inline-flex gap-1">
+                                <a class="" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                                  TL;DR
+                                </a>
+                                
+                              </p>
+                              <div class="collapse" id="collapseExample">
+                                <div class="">
+                                    <ul class="wp-block-list">
+                                        <li>Moto Razr 60 Series will launch in India soon. </li>
+                                        
+                                        
+                                        
+                                        <li>The series will include the Razr 60 &amp; Razr 60 Ultra. </li>
+                                        
+                                        
+                                        
+                                        <li>Razr 60 Ultra will get a premium wooden back version. </li>
+                                        </ul>
+                                </div>
+                              </div>
+                        </div>
+    
+                        <div class="blogdesp">
+                           <p>Motorola, a leading technology company, is preparing to unveil its next generation of foldable smartphones, the Razr 60 Series very soon. This lineup is anticipated to feature the <strong><a href="https://www.smartprix.com/mobiles/motorola-razr-60-ppd11nucn7m6">Moto Razr 60</a></strong> and the <strong><a href="https://www.smartprix.com/mobiles/motorola-razr-60-ultra-ppd1z5hmkqfk">Moto Razr 60 Ultra</a></strong> models. Recent reports suggest that the Moto Razr 60 Ultra will also be available in a premium version with a wooden back, as part of Motorola’s exploration of wooden finishes, providing a unique aesthetic compared to traditional leather and glass backs. The Razr 60 lineup will succeed the <strong><a href="https://www.smartprix.com/products/?q=moto%20razr%2050">Moto Razr 50 series</a></strong> that launched in 2024. Images of this wooden back variant have recently appeared online. Continue reading for further details.</p> 
+                           <p><strong>ALSO SEE: <a href="https://www.smartprix.com/bytes/samsung-galaxy-book5-series-of-laptops-now-available-in-india/" target="_blank" rel="noreferrer noopener">Samsung Galaxy Book5 Series of Laptops Now Available in India: Price, Features, Availability</a></strong></p>
+    
+                           <h2 class=""><strong>Moto Razr 60 Ultra Wooden Back: Renders surface online</strong></h2>
+                        </div>
+                        <div class="blogdesimg">
+                            <img src="image/7-8-1024x576.webp" alt="">
+                        </div>
+    
+                        <div class="blogdesp">
+                            <p>The Razr 60 Ultra, also referred to as the Razr+ 2025, has been revealed through a 360-degree video shared by the well-known tipster <a href="https://x.com/evleaks" target="_blank" rel="noreferrer noopener nofollow">@evleaks</a>. This trusted source has provided images and footage that display the foldable device in action, highlighting its opening and closing mechanism along with a detailed view of its wood-grained rear panel.</p>
+                            <p>&nbsp;The visuals suggest a luxurious wooden appearance for the back panel; however, it is uncertain whether the material is authentic wood or a high-quality imitation. The glossy finish of the rear panel implies that it may not be real wood, yet it still contributes an element of sophistication and nostalgia to the foldable design.</p>
+                            <p><strong>ALSO SEE: <a href="https://www.smartprix.com/bytes/best-portable-bluetooth-speakers-to-buy-in-india/" target="_blank" rel="noreferrer noopener">Best Portable Bluetooth Speakers to Buy in India (2025)</a></strong></p>
+                        </div>
+    
+                        <div class="blogdesimg">
+                            <img src="image/1-28-1015x1024.webp" alt="">
+                        </div>
+    
+                        <div class="blogdesp">
+                            <p>The wooden back panel will be a premium version for Razr 60 Ultra but its pricing and availability details are still shrouded in mystery.</p>
+                            <p><strong>ALSO SEE: <a href="https://www.smartprix.com/bytes/iqoo-z10-5g-confirmed-to-launch-on-april-11-with-massive-7300mah-battery/" target="_blank" rel="noreferrer noopener">iQOO Z10 5G Confirmed to Launch on April 11 with Massive 7,300mAh Battery</a></strong></p>
+                            <h2 class=""><strong>Moto Razr 60 Series: Details</strong></h2>
+                        </div>
+    
+                        <div class="blogsideimg">
+                            <div class="img1">
+                                <img src="image/2-23.webp" alt="">
+                                <p>Lorem Ispum</p>
+                            </div>
+                            <div class="img1">
+                                <img src="image/2-23.webp" alt="">
+                                <p>Lorem Ispum</p>
+                            </div>
+                        </div>
+    
+                        <div class="blogdesp">
+                            <p>Motorola’s upcoming flip series was recently spotted on 3C certification website and TENAA platform. According to TENAA, Razr 60 Ultra will sport a 6.96-inch OLED internal screen with a resolution of 1224×2992 pixels. The external cover display will be sized at 4-inches with 1080×1272 pixels. The refresh rate is expected to be 165Hz. Moto Razr 60 Ultra weighs 199 grams and is 171.48×73.99×7.29mm when unfolded making it a compact flip phone.</p>
+                            <p>Under the hood, Razr 60 Ultra will draw power from a Snapdragon 8 Elite chipset. It will come with up to 18GB RAM and up to 2TB onboard storage variants. The flip phone will pack a 4275mAh battery with 68W fast charging and wireless charging support. In terms of camera, it will feature a 50MP sensor at the front and dual lenses at the back (50MP+50MP). Apart from a wooden finish, the Moto Razr 60 Ultra is said to arrive in dark green, and red shades.</p>
+                        </div>
+    
+    
+                        <div class="blogsideimg">
+                            <div class="img1">
+                                <img src="image/2-23.webp" alt="">
+                                <p>Lorem Ispum</p>
+                            </div>
+                            <div class="img1">
+                                <img src="image/2-23.webp" alt="">
+                                <p>Lorem Ispum</p>
+                            </div>
+                        </div>
+    
+                        <div class="blogdesp">
+                            <p>Details about the Moto Razr 60 are scarce, but we might get to know more about it soon.</p>
+                            <p>You can follow Smartprix on&nbsp;<a href="https://twitter.com/smartprix" target="_blank" rel="noreferrer noopener">Twitter</a>,&nbsp;<a href="https://www.facebook.com/smartprix" target="_blank" rel="noreferrer noopener">Facebook</a>,&nbsp;<a href="https://instagram.com/smartprix" target="_blank" rel="noreferrer noopener">Instagram</a>, and&nbsp;<a href="https://news.google.com/publications/CAAqBwgKMKe7jwswjemiAw?ceid=IN:en&amp;oc=3" target="_blank" rel="noreferrer noopener">Google News</a>. Visit&nbsp;<a href="http://smartprix.com/" target="_blank" rel="noreferrer noopener">smartprix.com</a>&nbsp;for the latest tech and auto&nbsp;<a href="https://www.smartprix.com/bytes/category/news/" target="_blank" rel="noreferrer noopener">news</a>,&nbsp;<a href="https://www.smartprix.com/bytes/category/reviews/" target="_blank" rel="noreferrer noopener">reviews</a>, and&nbsp;<a href="https://www.smartprix.com/bytes/category/top10/" target="_blank" rel="noreferrer noopener">guides</a>.</p>
+                        </div>
+                    </div>
+                    <div class="profilediv">
+                        <div class="profile-card">
+                            <img src="image/TMOTgd5a.webp" alt="Profile Image" class="profile-img">
+                            <div>
+                                <h5 class="mb-1">Shivangi Agarwal</h5>
+                                <div class="social-icons mb-2">
+                                    <a href="#"><i class="fas fa-envelope"></i></a>
+                                    <a href="#"><i class="fab fa-facebook"></i></a>
+                                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                </div>
+                                <p class="mb-0">
+                                    Shivangi is an honours graduate in English from Delhi University with a passion for reading and writing. 
+                                    Always keen to know more about the latest gadgets, when she is not reading about tech, she loves listening to Hindi music and grooving to the latest Hindi beats.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="latestNewssection">
+                        <h2>Related Articles</h2>
+                        <div class="news-card_p">
+                            <img src="image/vivo-T4x-vs.-Galaxy-M16-5G-vs.-CMF-Phone-1.webp" alt="News Image">
+                            <div class="news-content_p">
+                                <a href="#">vivo T4x vs. CMF Phone (1) vs. Galaxy M16: Which Entry-Level 5G Handset Suits
+                                    You The Best?</a>
+                                <p>The Chinese smartphone giant vivo recently released an affordable 5G handset...</p>
+                            </div>
+                        </div>
+                        <div class="news-card_p">
+                            <img src="image/vivo-T4x-vs.-Galaxy-M16-5G-vs.-CMF-Phone-1.webp" alt="News Image">
+                            <div class="news-content_p">
+                                <a href="#">vivo T4x vs. CMF Phone (1) vs. Galaxy M16: Which Entry-Level 5G Handset Suits
+                                    You The Best?</a>
+                                <p>The Chinese smartphone giant vivo recently released an affordable 5G handset...</p>
+                            </div>
+                        </div>
+                        <div class="news-card_p">
+                            <img src="image/vivo-T4x-vs.-Galaxy-M16-5G-vs.-CMF-Phone-1.webp" alt="News Image">
+                            <div class="news-content_p">
+                                <a href="#">vivo T4x vs. CMF Phone (1) vs. Galaxy M16: Which Entry-Level 5G Handset Suits
+                                    You The Best?</a>
+                                <p>The Chinese smartphone giant vivo recently released an affordable 5G handset...</p>
+                            </div>
+                        </div>
+                        <div class="news-card_p">
+                            <img src="image/vivo-T4x-vs.-Galaxy-M16-5G-vs.-CMF-Phone-1.webp" alt="News Image">
+                            <div class="news-content_p">
+                                <a href="#">vivo T4x vs. CMF Phone (1) vs. Galaxy M16: Which Entry-Level 5G Handset Suits
+                                    You The Best?</a>
+                                <p>The Chinese smartphone giant vivo recently released an affordable 5G handset...</p>
+                            </div>
+                        </div>
+                        <div class="news-card_p">
+                            <img src="image/vivo-T4x-vs.-Galaxy-M16-5G-vs.-CMF-Phone-1.webp" alt="News Image">
+                            <div class="news-content_p">
+                                <a href="#">vivo T4x vs. CMF Phone (1) vs. Galaxy M16: Which Entry-Level 5G Handset Suits
+                                    You The Best?</a>
+                                <p>The Chinese smartphone giant vivo recently released an affordable 5G handset...</p>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="commentDiv">
+                        <h4>Discuss</h4>
+                        <p class="text-muted">19 Comments</p>
+    
+                        <div class="mb-3">
+                            <input type="text" class="form-control bg-light" placeholder="Add a new comment">
+                        </div>
+    
+                        <!-- Comment 1 -->
+                        <div class="comment-box d-flex">
+                            <img src="image/HHGXaSBT.webp" class="rounded-circle me-2" alt="User">
+                            <div>
+                                <strong class="username">Badar uddin</strong> <span
+                                    class="text-muted">@badar_buqikigi</span>
+                                <p class="mb-1">Before snapdragon 7gen 2 after mediatek 7300 😡</p>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-sm btn-light me-2"><i class="fas fa-thumbs-up"></i></button>
+                                    <button class="btn btn-sm btn-light me-2"><i class="fas fa-thumbs-down"></i></button>
+                                    <button class="btn btn-sm btn-link">Reply</button>
+    
+                                    <button class="btn btn-sm btn-light me-2"><i
+                                            class="fa-solid fa-ellipsis-vertical"></i></button>
+                                </div>
+                            </div>
+                            <span class="text-muted ms-auto">1 month ago</span>
+                        </div>
+    
+                        <!-- Comment 2 -->
+                        <div class="comment-box d-flex">
+                            <img src="image/HHGXaSBT.webp" class="rounded-circle me-2" alt="User">
+                            <div>
+                                <strong class="username">Nazneen Naz</strong> <span
+                                    class="text-muted">@nazneen_zatacivo</span>
+                                <p class="mb-1">launch date plz</p>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-sm btn-light me-2"><i class="fas fa-thumbs-up"></i></button>
+                                    <button class="btn btn-sm btn-light me-2"><i class="fas fa-thumbs-down"></i></button>
+                                    <button class="btn btn-sm btn-link">Reply</button>
+                                </div>
+                            </div>
+                            <span class="text-muted ms-auto">3 months ago</span>
+                        </div>
+    
+                        <!-- Reply to Comment 2 -->
+                        <div class="reply-box d-flex">
+                            <img src="image/HHGXaSBT.webp" class="rounded-circle me-2" alt="User">
+                            <div>
+                                <strong class="username">Yashashvi Mittal</strong> <span
+                                    class="text-muted">@yashashvi_ridabizu</span>
+                                <p class="mb-1">not confirm.</p>
+                                <button class="btn btn-sm btn-light"><i class="fas fa-thumbs-up"></i></button>
+                            </div>
+                            <span class="text-muted ms-auto">3 months ago</span>
+                        </div>
+    
+                        <!-- Comment 3 -->
+                        <div class="comment-box d-flex">
+                            <img src="image/cDF1L0AE.webp" class="rounded-circle me-2" alt="User">
+                            <div>
+                                <strong class="username">IMMU Star Khan</strong> <span
+                                    class="text-muted">@immu_qosireco</span>
+                                <p class="mb-1">Kab ayega</p>
+                                <div class="d-flex align-items-center">
+                                    <button class="btn btn-sm btn-light me-2"><i class="fas fa-thumbs-up"></i></button>
+                                    <button class="btn btn-sm btn-light me-2"><i class="fas fa-thumbs-down"></i></button>
+                                    <button class="btn btn-sm btn-link">Reply</button>
+                                </div>
+                            </div>
+                            <span class="text-muted ms-auto">3 months ago</span>
+                        </div>
+    
+                        <p class="show-replies mt-2">Show Replies (3)</p>
+                        <div class="viewfullbutton reviewbtnf">
+                            <a href="#">
+                                <b>VIEW ALL COMMENTS (19) →</b>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="popular_mobiles latestNews">
+                        <div class="divHeader">
+                            <div class="title">
+                                <h2>Latest & Trending Articles
+                                </h2>
+                            </div>
+                            <div class="btndiv">
+                                <a href="#"> View All <i class="fa-solid fa-right-long"></i> </a>
+                            </div>
+                        </div>
+
+                        <div class="latest_newsdiv">
+                            <div class="storiescard desktops">
+                                <div class="topcards dsktop">
+                                    <div class="s_card">
+                                        <div class="image-wrapper">
+                                            <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                        </div>
+                                        <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                    </div>
+
+                                    <div class="s_card">
+                                        <div class="image-wrapper">
+                                            <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                        </div>
+                                        <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                    </div>
+
+                                    <div class="s_card mbscard deskmb">
+                                        <div class="image-wrapper">
+                                            <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                        </div>
+                                        <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                    </div>
+                                </div>
+                                <div class="topcards bottomcards">
+                                    <div class="s_card">
+                                        <div class="image-wrapper">
+                                            <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                        </div>
+                                        <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                    </div>
+
+                                    <div class="s_card">
+                                        <div class="image-wrapper">
+                                            <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                        </div>
+                                        <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                    </div>
+
+                                    <div class="s_card">
+                                        <div class="image-wrapper">
+                                            <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                        </div>
+                                        <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- moblie story section -->
+                            <section class="mobile_storySection">
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-12 storyColm">
+                                            <div class="storyDivs mobileStorydivs tandingNewsm">
+                                                <!-- Swiper Slider Container -->
+                                                <div class="swiper storiesSlider">
+                                                    <div class="swiper-wrapper">
+                                                        <div class="swiper-slide s_card">
+                                                            <div class="image-wrapper">
+                                                                <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                                            </div>
+                                                            <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                                        </div>
+
+                                                        <div class="swiper-slide s_card">
+                                                            <div class="image-wrapper">
+                                                                <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                                            </div>
+                                                            <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                                        </div>
+
+                                                        <div class="swiper-slide s_card">
+                                                            <div class="image-wrapper">
+                                                                <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                                            </div>
+                                                            <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                                        </div>
+
+                                                        <div class="swiper-slide s_card">
+                                                            <div class="image-wrapper">
+                                                                <img src="image/iQOO-Z9-1.jpg" alt="" />
+                                                            </div>
+                                                            <p>Exclusive: iQOO Z10 5G Packs a Massive</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <!-- mobile story section end -->
+                        </div>
+                    </div>
+
+
+                    <div class="popular_mobiles related_mobiles">
+                        <div class="divHeader">
+                            <div class="title">
+                                <h2>Related Mobile Phones
+                                </h2>
+                            </div>
+                            <div class="btndiv">
+                                <a href="#"> View All <i class="fa-solid fa-right-long"></i> </a>
+                            </div>
+                        </div>
+    
+                        <div class="popular_products">
+                            <div class="products_row">
+                                <div class="productdiv firstProduct">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productdiv">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productdiv">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productdiv lproduct">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="products_row">
+                                <div class="productdiv firstProduct">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productdiv">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productdiv">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="productdiv lproduct">
+                                    <div class="imgdiv">
+                                        <img src="image/realme-p3-ultra.webp" alt="" />
+                                    </div>
+                                    <div class="name_dot">
+                                        <div class="name_price">
+                                            <p>Product Name</p>
+                                            <h6>$1000</h6>
+                                        </div>
+                                        <div class="dotop">
+                                            <i class="fa-solid fa-ellipsis-vertical"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+    
+                    <div class="related_search_compairdiv">
+                        <div class="relative_search">
+                            <div class="related-box">
+                                <h5>Related Searches</h5>
+                                <ul class="list-unstyled">
+                                    <li><a href="#">100X Zoom Camera Mobile Phones</a></li>
+                                    <li><a href="#">Best Android Mobile Phones Under 25000 in India</a></li>
+                                    <li><a href="#">Upcoming Mobile Phones Under ₹30,000</a></li>
+                                    <li><a href="#">Android Mobile Phones Price List</a></li>
+                                    <li><a href="#">Best Vivo Mobile Phones Price List</a></li>
+                                    <li><a href="#">Best Vivo Mobile Phones Between ₹10,000 and ₹15,000</a></li>
+                                    <li><a href="#">Cars With 6 Gears</a></li>
+                                    <li><a href="#">Upcoming TVs</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="compairsonDivpro">
+                            <div class="comparisonDiv productdestialcom bg-white">
+                                <div class="divHeader">
+                                    <div class="title">
+                                        <h2>Compared With
+                                        </h2>
+                                    </div>
+                                </div>
+    
+                                <div class="comparisonItms">
+                                    <div class="row align-items-center">
+                                        <div class="col-5 text-center firstP">
+                                            <h5 class="mt-2">Realme P3 5G</h5>
+                                            <img src="image/realme-p3-5g.webp" class="img-fluid" alt="Realme P3 5G" />
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5>vs</h5>
+                                        </div>
+                                        <div class="col-5 text-center secondP">
+                                            <img src="image/vivo-t4x-5g.webp" class="img-fluid" alt="Vivo T4x 5G" />
+                                            <h5 class="mt-2">Vivo T4x 5G</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparisonItms">
+                                    <div class="row align-items-center">
+                                        <div class="col-5 text-center firstP">
+                                            <h5 class="mt-2">Realme P3 5G</h5>
+                                            <img src="image/realme-p3-5g.webp" class="img-fluid" alt="Realme P3 5G" />
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5>vs</h5>
+                                        </div>
+                                        <div class="col-5 text-center secondP">
+                                            <img src="image/vivo-t4x-5g.webp" class="img-fluid" alt="Vivo T4x 5G" />
+                                            <h5 class="mt-2">Vivo T4x 5G</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparisonItms">
+                                    <div class="row align-items-center">
+                                        <div class="col-5 text-center firstP">
+                                            <h5 class="mt-2">Realme P3 5G</h5>
+                                            <img src="image/realme-p3-5g.webp" class="img-fluid" alt="Realme P3 5G" />
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5>vs</h5>
+                                        </div>
+                                        <div class="col-5 text-center secondP">
+                                            <img src="image/vivo-t4x-5g.webp" class="img-fluid" alt="Vivo T4x 5G" />
+                                            <h5 class="mt-2">Vivo T4x 5G</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparisonItms">
+                                    <div class="row align-items-center">
+                                        <div class="col-5 text-center firstP">
+                                            <h5 class="mt-2">Realme P3 5G</h5>
+                                            <img src="image/realme-p3-5g.webp" class="img-fluid" alt="Realme P3 5G" />
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5>vs</h5>
+                                        </div>
+                                        <div class="col-5 text-center secondP">
+                                            <img src="image/vivo-t4x-5g.webp" class="img-fluid" alt="Vivo T4x 5G" />
+                                            <h5 class="mt-2">Vivo T4x 5G</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparisonItms">
+                                    <div class="row align-items-center">
+                                        <div class="col-5 text-center firstP">
+                                            <h5 class="mt-2">Realme P3 5G</h5>
+                                            <img src="image/realme-p3-5g.webp" class="img-fluid" alt="Realme P3 5G" />
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5>vs</h5>
+                                        </div>
+                                        <div class="col-5 text-center secondP">
+                                            <img src="image/vivo-t4x-5g.webp" class="img-fluid" alt="Vivo T4x 5G" />
+                                            <h5 class="mt-2">Vivo T4x 5G</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="comparisonItms">
+                                    <div class="row align-items-center">
+                                        <div class="col-5 text-center firstP">
+                                            <h5 class="mt-2">Realme P3 5G</h5>
+                                            <img src="image/realme-p3-5g.webp" class="img-fluid" alt="Realme P3 5G" />
+                                        </div>
+                                        <div class="col-2 text-center">
+                                            <h5>vs</h5>
+                                        </div>
+                                        <div class="col-5 text-center secondP">
+                                            <img src="image/vivo-t4x-5g.webp" class="img-fluid" alt="Vivo T4x 5G" />
+                                            <h5 class="mt-2">Vivo T4x 5G</h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+                <div class="col-md-4 sidebarnewscol">
+                    <div class="rightsidebar">
+                        <div class="popular_mobiles popularTvdiv popularEarphones">
+                            <div class="divHeader">
+                                <div class="title">
+                                    <h2>Trending</h2>
+                                </div>
+                                
+                            </div>
+
+                            <div class="popular_products">
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                        <div class="popular_mobiles popularTvdiv popularEarphones secten">
+                            <div class="divHeader">
+                                <div class="title">
+                                    <h2>Trending</h2>
+                                </div>
+                                
+                            </div>
+
+                            <div class="popular_products">
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="popularTvs">
+                                    <div class="tv earphones tnewsp">
+                                        <div class="tvimg">
+                                            <img src="image/Realme-P3-ultra-scaled.webp" alt="" />
+                                        </div>
+                                        <div class="textanddot earphone_txt">
+                                            <div class="tvtxt earphoneTxt">
+                                                <h4>realme P3 Ultra and P3: These Mid-Range Titans Deserve Your Attention</h4>
+                                                
+                                            </div>
+                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- blog details end -->
+
+
+
+
+</main>
+<footer class="text-light py-4">
+    <div class="container-fluid">
+        <div class="row menuRowfooter">
+            <div class="col-md-3 text-center text-md-start mb-3 logoanasocalf">
+                <a href="index.html" class="d-block mb-3">
+                    <img src="image/sm_small.png" alt="Smartprix" width="186" height="60" />
+                </a>
+                <div class="social_icons">
+                    <div class="first4">
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-youtube"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-instagram"></i></a>
+                    </div>
+                    <div class="second4">
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-telegram-plane"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="text-light d-flex justify-content-center align-items-center" style="width: 24%;"><i class="fab fa-pinterest"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-9">
+                <div class="row">
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>Categories</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Mobile Phones</a></li>
+                            <li><a href="#" class="text-light">Tablets</a></li>
+                            <li><a href="#" class="text-light">Cars</a></li>
+                            <li><a href="#" class="text-light">Laptops</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>Mobile Brands</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Samsung Mobiles</a></li>
+                            <li><a href="#" class="text-light">Apple iPhones</a></li>
+                            <li><a href="#" class="text-light">Realme Mobiles</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>Mobile Lists</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">Smartphones</a></li>
+                            <li><a href="#" class="text-light">5G Mobiles</a></li>
+                            <li><a href="#" class="text-light">Waterproof Mobiles</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-6 col-md-3 mb-3">
+                        <h5>About</h5>
+                        <ul class="list-unstyled">
+                            <li><a href="#" class="text-light">About Smartprix</a></li>
+                            <li><a href="#" class="text-light">Contact Us</a></li>
+                            <li><a href="#" class="text-light">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="socialMobilemenu">
+            <div class="first4">
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-telegram-plane"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-linkedin"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="text-light d-flex justify-content-center align-items-center"><i class="fab fa-pinterest"></i></a>
+            </div>
+        </div>
+
+        <div class="cpy_right">
+            <div class="row">
+                <div class="col-md-6 text-white">
+                    <p class="cpyrightext">Copyright © 2025, Smartprix.com. All Rights Reserved</p>
+                </div>
+                <div class="col-md-6 text-white">
+                    <div class="bottom_menu">
+                        <ul>
+                            <li>
+                                <a href="#">
+                                    Contact Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Privacy Policy
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">Terms and Conditions</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/script.js"></script>
+<script>
+    var swiper = new Swiper(".storiesSlider", {
+        slidesPerView: "auto",
+        spaceBetween: 5,
+        breakpoints: {
+            320: {
+                slidesPerView: 2,
+                centeredSlides: true,
+            },
+            768: {
+                slidesPerView: 4,
+            },
+        },
+    });
+</script>
+ <script>
+    document.querySelectorAll(".newsSearch").forEach(function(element) {
+        element.addEventListener("click", function(event) {
+            event.preventDefault();
+            var searchModal = new bootstrap.Modal(document.getElementById("searchModal"));
+            searchModal.show();
+        });
+    });
+
+    document.getElementById("filterIcon").addEventListener("click", function(event) {
+        event.preventDefault();
+        document.getElementById("categoryPanel").classList.add("active");
+    });
+
+    document.getElementById("closeCategory").addEventListener("click", function() {
+        document.getElementById("categoryPanel").classList.remove("active");
+    });
+</script>
+
+</body>
+</html>
