@@ -145,3 +145,183 @@ function toggleText() {
       button.innerText = "Read More";
   }
 }
+var swiper = new Swiper(".storiesSlider", {
+  slidesPerView: "auto",
+  spaceBetween: 5,
+  breakpoints: {
+      320: {
+          slidesPerView: 2,
+          centeredSlides: true,
+      },
+      768: {
+          slidesPerView: 4,
+      },
+  },
+});
+// category page
+function toggleFilter(id, element) {
+  let content = document.getElementById(id);
+  let icon = element.querySelector("i");
+  if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+      icon.classList.remove("fa-angle-up");
+      icon.classList.add("fa-angle-down");
+  } else {
+      content.style.display = "none";
+      icon.classList.remove("fa-angle-down");
+      icon.classList.add("fa-angle-up");
+  }
+}
+function toggleFilterPanel() {
+  const panel = document.getElementById("filterPanel");
+  if (panel.classList.contains("show")) {
+      panel.style.bottom = "-100%";
+      setTimeout(() => panel.classList.remove("show"), 300);
+  } else {
+      panel.classList.add("show");
+      panel.style.bottom = "0";
+  }
+}
+var swiper = new Swiper(".featureSwiper", {
+  slidesPerView: 6,
+  spaceBetween: 10,
+  loop: false,
+  scrollbar: {
+      el: ".swiper-scrollbar",
+      hide: false,
+      draggable: true,
+  },
+  watchOverflow: true,
+  breakpoints: {
+      320: { slidesPerView: 3 },
+      768: { slidesPerView: 4 },
+      1024: { slidesPerView: 6 },
+  },
+});
+var swiper = new Swiper(".mySwiper", {
+  slidesPerView: 5,
+  spaceBetween: 10,
+  initialSlide: 0, 
+  loop: false, 
+  centeredSlides: false, 
+  pagination: {
+      el: ".swiper-pagination",
+      clickable: true,
+  },
+  scrollbar: {
+      el: ".swiper-scrollbar",
+      hide: false, 
+      draggable: true,
+  },
+});
+var swiper = new Swiper(".storiesSlider", {
+  slidesPerView: "auto",
+  spaceBetween: 5,
+  breakpoints: {
+      320: {
+          slidesPerView: 2,
+          centeredSlides: true,
+      },
+      768: {
+          slidesPerView: 4,
+      },
+  },
+});
+// comparison page
+var swiper = new Swiper(".storiesSlider", {
+  slidesPerView: "auto",
+  spaceBetween: 5,
+  breakpoints: {
+      320: {
+          slidesPerView: 2,
+          centeredSlides: true,
+      },
+      768: {
+          slidesPerView: 4,
+      },
+  },
+});
+document.addEventListener("DOMContentLoaded", function () {
+  let cmpproductdiv = document.querySelector(".cmpproductdiv");
+  let fixeddiv = document.querySelector(".fixeddiv");
+
+  window.addEventListener("scroll", function () {
+      let cmpproductdivRect = cmpproductdiv.getBoundingClientRect();
+
+
+      if (cmpproductdivRect.bottom < 0) {
+          fixeddiv.style.display = "flex";
+      } else {
+          fixeddiv.style.display = "none";
+      }
+  });
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+document.querySelectorAll(".productitemdivcmp .close-icon").forEach(function (closeBtn) {
+closeBtn.addEventListener("click", function () {
+  let productDiv = this.closest(".productitemdivcmp"); // Find the closest product div
+  
+  if (productDiv) {
+      // Create a new add_productdiv element
+      let addProductDiv = document.createElement("div");
+      addProductDiv.classList.add("add_productdiv", "openCompare"); // Ensure openCompare class is present
+
+      // Set the inner HTML for the new div
+      addProductDiv.innerHTML = `
+          <div class="add-product-card text-center">
+              <div class="add-icon">+</div>
+              <div class="add-text">Add Product</div>
+          </div>
+      `;
+
+      // Replace the product div with the new add product div
+      productDiv.replaceWith(addProductDiv);
+  }
+});
+});
+});
+
+$(document).ready(function () {
+   
+  $(document).on("click", ".openCompare", function (e) {
+      e.preventDefault();
+      $("#comparePanel, #overlay").addClass("show");
+  });
+
+
+  $(document).on("click", "#closeCompare, #overlay", function () {
+      $("#comparePanel, #overlay").removeClass("show");
+  });
+});
+
+// news details page
+document.querySelectorAll(".newsSearch").forEach(function(element) {
+  element.addEventListener("click", function(event) {
+      event.preventDefault();
+      var searchModal = new bootstrap.Modal(document.getElementById("searchModal"));
+      searchModal.show();
+  });
+});
+
+document.getElementById("filterIcon").addEventListener("click", function(event) {
+  event.preventDefault();
+  document.getElementById("categoryPanel").classList.add("active");
+});
+
+document.getElementById("closeCategory").addEventListener("click", function() {
+  document.getElementById("categoryPanel").classList.remove("active");
+});
+var swiper = new Swiper(".storiesSlider", {
+  slidesPerView: "auto",
+  spaceBetween: 5,
+  breakpoints: {
+      320: {
+          slidesPerView: 2,
+          centeredSlides: true,
+      },
+      768: {
+          slidesPerView: 4,
+      },
+  },
+});

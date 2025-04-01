@@ -21,43 +21,7 @@
         <link rel="stylesheet" href="css/detailspageresponsive.css" />
         <link rel="icon" href="image/apple-touch-icon.png" />
     </head>
-    <style>
-        .swiper {
-            width: 100%;
-            height: 100%;
-        }
-
-        .swiper-slide {
-            text-align: center;
-            font-size: 18px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .swiper-wrapper {
-            display: flex;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .swiper-scrollbar {
-            background: #ddd;
-            /* Light background */
-            height: 4px;
-            /* Adjust height */
-        }
-
-        .swiper-scrollbar-drag {
-            background: #afafaf;
-        }
-    </style>
+  
 
     <body>
         <!-- Fixed Bottom Button Section -->
@@ -1678,81 +1642,6 @@
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="js/script.js"></script>
-        <script>
-            var swiper = new Swiper(".storiesSlider", {
-                slidesPerView: "auto",
-                spaceBetween: 5,
-                breakpoints: {
-                    320: {
-                        slidesPerView: 2,
-                        centeredSlides: true,
-                    },
-                    768: {
-                        slidesPerView: 4,
-                    },
-                },
-            });
-        </script>
-        <script>
-            var swiper = new Swiper(".mySwiper", {
-                slidesPerView: 5,
-                spaceBetween: 10,
-                initialSlide: 0, 
-                loop: false, 
-                centeredSlides: false, 
-                pagination: {
-                    el: ".swiper-pagination",
-                    clickable: true,
-                },
-                scrollbar: {
-                    el: ".swiper-scrollbar",
-                    hide: false, 
-                    draggable: true,
-                },
-            });
-        </script>
-        <script>
-            var swiper = new Swiper(".featureSwiper", {
-                slidesPerView: 6,
-                spaceBetween: 10,
-                loop: false,
-                scrollbar: {
-                    el: ".swiper-scrollbar",
-                    hide: false,
-                    draggable: true,
-                },
-                watchOverflow: true,
-                breakpoints: {
-                    320: { slidesPerView: 3 },
-                    768: { slidesPerView: 4 },
-                    1024: { slidesPerView: 6 },
-                },
-            });
-        </script>
-        <script>
-            function toggleFilter(id, element) {
-                let content = document.getElementById(id);
-                let icon = element.querySelector("i");
-                if (content.style.display === "none" || content.style.display === "") {
-                    content.style.display = "block";
-                    icon.classList.remove("fa-angle-up");
-                    icon.classList.add("fa-angle-down");
-                } else {
-                    content.style.display = "none";
-                    icon.classList.remove("fa-angle-down");
-                    icon.classList.add("fa-angle-up");
-                }
-            }
-            function toggleFilterPanel() {
-                const panel = document.getElementById("filterPanel");
-                if (panel.classList.contains("show")) {
-                    panel.style.bottom = "-100%";
-                    setTimeout(() => panel.classList.remove("show"), 300);
-                } else {
-                    panel.classList.add("show");
-                    panel.style.bottom = "0";
-                }
-            }
-        </script>
+        
     </body>
 </html>
